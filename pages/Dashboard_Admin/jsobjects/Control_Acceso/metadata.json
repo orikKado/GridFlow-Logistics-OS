@@ -1,0 +1,11 @@
+{
+  "gitSyncId": "69cb24d97fa34d5debf7475f_1beb4ee6-e297-458e-85f7-97b858be962a",
+  "id": "Dashboard_Admin_Control_Acceso",
+  "unpublishedCollection": {
+    "name": "Control_Acceso",
+    "pageId": "Dashboard_Admin",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": []
+  }
+}

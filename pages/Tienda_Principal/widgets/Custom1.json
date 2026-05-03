@@ -1,0 +1,68 @@
+{
+  "backgroundColor": "#FFFFFF",
+  "borderColor": "#E0DEDE",
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "borderWidth": "1",
+  "bottomRow": 90,
+  "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
+  "defaultModel": "{{\n  {\n    \"productos\": Vitrina_Inventario.data || [],\n    \"sesion\": {\n      \"piloto_id\": appsmith.store.piloto_id || \"invitado\"\n    },\n    \"textos\": {\n      \"btn_comprar\": Motor_i18n.t('Tienda_Principal', 'btn_comprar'),\n      \"btn_login\": Motor_i18n.t('Tienda_Principal', 'btn_login'),\n      \"agotado\": Motor_i18n.t('Tienda_Principal', 'agotado'),\n      \"precio\": Motor_i18n.t('Tienda_Principal', 'precio'),\n      \"stock\": Motor_i18n.t('Tienda_Principal', 'stock')\n    }\n  }\n}}",
+  "dynamicBindingPathList": [
+    {
+      "key": "theme"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "boxShadow"
+    },
+    {
+      "key": "defaultModel"
+    }
+  ],
+  "dynamicHeight": "FIXED",
+  "dynamicPropertyPathList": [],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onComprar"
+    }
+  ],
+  "events": [
+    "onComprar"
+  ],
+  "isCanvas": false,
+  "isLoading": false,
+  "isSearchWildcard": true,
+  "isVisible": true,
+  "key": "bcv3qhcghr",
+  "leftColumn": 1,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "mobileBottomRow": 57,
+  "mobileLeftColumn": 1,
+  "mobileRightColumn": 24,
+  "mobileTopRow": 27,
+  "needsErrorInfo": false,
+  "onComprar": "{{showModal(Modal_Compra.name).then(() => {\n  Leer_Lotes_Item.run();\n});}}",
+  "parentColumnSpace": 19.8125,
+  "parentId": "0",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "rightColumn": 63,
+  "srcDoc": {
+    "css": "body {\n  font-family: sans-serif;\n  margin: 0;\n  padding: 10px;\n}\n\n.grid-vitrina {\n  display: grid;\n  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));\n  gap: 16px;\n}\n\n.tarjeta {\n  background: #fff;\n  border: 1px solid #e5e7eb;\n  border-radius: 8px;\n  padding: 16px;\n  text-align: center;\n  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);\n  transition: transform 0.2s;\n}\n\n.tarjeta:hover {\n  transform: translateY(-3px);\n}\n\n.img-nave {\n  width: 100%;\n  height: 120px;\n  object-fit: contain;\n  margin-bottom: 12px;\n}\n\n.nombre {\n  font-weight: bold;\n  font-size: 16px;\n  margin-bottom: 8px;\n  color: #111827;\n}\n\n.precio {\n  font-size: 14px;\n  color: #4b5563;\n  margin-bottom: 4px;\n}\n\n.stock {\n  font-size: 14px;\n  font-weight: bold;\n  margin-bottom: 16px;\n  color: #22c55e;\n}\n\n.stock-cero {\n  color: #ef4444;\n}\n\n.btn-comprar {\n  width: 100%;\n  padding: 10px;\n  background: #c084fc;\n  border: none;\n  border-radius: 6px;\n  color: white;\n  font-weight: bold;\n  cursor: pointer;\n}\n\n.btn-comprar:hover {\n  background: #a855f7;\n}\n\n.btn-comprar:disabled {\n  background: #d1d5db;\n  cursor: not-allowed;\n}",
+    "html": "<div id=\"radar\" style=\"padding:15px; font-family:monospace; font-size:14px; color: purple;\">[1] Esperando motor JS...</div>\n<div class=\"grid-vitrina\"></div>",
+    "js": "function construirVitrina(model) {\n  // 1. ESCUDO TRY-CATCH TOTAL\n  try {\n    const radar = document.getElementById('radar');\n    const grid = document.querySelector('.grid-vitrina');\n    if (!radar || !grid) return;\n\n    // --- EXTRACCIÓN DE DICCIONARIO DESDE EL MODELO ---\n    const txt = model.textos || {\n      precio: \"Precio:\",\n      stock: \"Stock:\",\n      btn_comprar: \"Añadir a la Orden\",\n      btn_login: \"Inicia Sesión\",\n      agotado: \"AGOTADO\",\n      radar_construyendo: \"Construyendo plano holográfico...\",\n      item_desconocido: \"Item Desconocido\"\n    };\n    radar.style.display = 'block';\n    radar.innerHTML = `[3] ${txt.radar_construyendo}`;\n    grid.innerHTML = '';\n\n    // Verificación de seguridad de datos\n    if (!model || !model.productos) {\n      radar.innerHTML = \"<span style='color:orange'>⚠️ Error: Model.productos missing.</span>\";\n      return;\n    }\n    if (!Array.isArray(model.productos)) {\n      radar.innerHTML = \"<span style='color:red'>❌ Error: 'productos' is not an array.</span>\";\n      return;\n    }\n    if (model.productos.length === 0) {\n      radar.innerHTML = \"<span style='color:blue'>✅ Catálogo vacío / Empty catalog.</span>\";\n      return;\n    }\n    const sesionActiva = model.sesion && model.sesion.piloto_id && model.sesion.piloto_id !== \"invitado\";\n    radar.style.display = 'none';\n    model.productos.forEach(item => {\n      const cantidad = item.stock_total || item.stock || item.cantidad || 0;\n      const precioRaw = item.precio_cliente || item.mejor_precio || item.precio_isk || item.precio || 0;\n      const precio = Number(precioRaw).toLocaleString('en-US');\n      const id = item.item_id || 1;\n      const nombre = item.nombre_item || item.nombre || txt.item_desconocido;\n\n      // Lógica de estado del botón traducida\n      const estaAgotado = cantidad === 0;\n      const botonHabilitado = sesionActiva && !estaAgotado;\n      let textoBoton = txt.btn_comprar;\n      if (!sesionActiva) textoBoton = txt.btn_login;\n      if (estaAgotado) textoBoton = txt.agotado;\n      const tarjeta = document.createElement('div');\n      tarjeta.className = 'tarjeta';\n      tarjeta.innerHTML = `\n        <img class=\"img-nave\" src=\"https://images.evetech.net/types/${id}/icon?size=256\" onerror=\"this.src='https://images.evetech.net/types/34/icon'\" alt=\"${nombre}\">\n        <div class=\"nombre\">${nombre}</div>\n        <div class=\"precio\">${txt.precio} ${precio} ISK</div>\n        <div class=\"${cantidad > 0 ? 'stock' : 'stock stock-cero'}\">${cantidad > 0 ? `${txt.stock} ${cantidad} unds.` : txt.agotado}</div>\n        <button class=\"btn-comprar\" ${!botonHabilitado ? 'disabled' : ''}>${textoBoton}</button>\n      `;\n      if (botonHabilitado) {\n        tarjeta.querySelector('button').addEventListener('click', () => {\n          appsmith.updateModel({\n            itemSeleccionado: item\n          });\n          setTimeout(() => appsmith.triggerEvent('onComprar'), 50);\n        });\n      }\n      grid.appendChild(tarjeta);\n    });\n  } catch (error) {\n    const radar = document.getElementById('radar');\n    if (radar) {\n      radar.style.display = 'block';\n      radar.innerHTML = `<span style='color:#ef4444; font-weight:bold;'>⚠️ Fallo en la Matriz: ${error.message}</span>`;\n    }\n    console.error(\"GridFlow Logistics - Error crítico evitado:\", error);\n  }\n}\nappsmith.onReady(() => {\n  construirVitrina(appsmith.model);\n});\nappsmith.onModelChange(nuevoModelo => {\n  construirVitrina(nuevoModelo);\n});"
+  },
+  "theme": "{{appsmith.theme}}",
+  "topRow": 27,
+  "type": "CUSTOM_WIDGET",
+  "uncompiledSrcDoc": {
+    "css": "body { font-family: sans-serif; margin: 0; padding: 10px; }\n.grid-vitrina { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 16px; }\n.tarjeta { background: #fff; border: 1px solid #e5e7eb; border-radius: 8px; padding: 16px; text-align: center; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); transition: transform 0.2s;}\n.tarjeta:hover { transform: translateY(-3px); }\n.img-nave { width: 100%; height: 120px; object-fit: contain; margin-bottom: 12px; }\n.nombre { font-weight: bold; font-size: 16px; margin-bottom: 8px; color: #111827; }\n.precio { font-size: 14px; color: #4b5563; margin-bottom: 4px; }\n.stock { font-size: 14px; font-weight: bold; margin-bottom: 16px; color: #22c55e; }\n.stock-cero { color: #ef4444; }\n.btn-comprar { width: 100%; padding: 10px; background: #c084fc; border: none; border-radius: 6px; color: white; font-weight: bold; cursor: pointer; }\n.btn-comprar:hover { background: #a855f7; }\n.btn-comprar:disabled { background: #d1d5db; cursor: not-allowed; }",
+    "html": "<div id=\"radar\" style=\"padding:15px; font-family:monospace; font-size:14px; color: purple;\">[1] Esperando motor JS...</div>\n<div class=\"grid-vitrina\"></div>",
+    "js": "function construirVitrina(model) {\n  // 1. ESCUDO TRY-CATCH TOTAL\n  try {\n    const radar = document.getElementById('radar');\n    const grid = document.querySelector('.grid-vitrina');\n    \n    if(!radar || !grid) return; \n    \n    // --- EXTRACCIÓN DE DICCIONARIO DESDE EL MODELO ---\n    const txt = model.textos || {\n      precio: \"Precio:\",\n      stock: \"Stock:\",\n      btn_comprar: \"Añadir a la Orden\",\n      btn_login: \"Inicia Sesión\",\n      agotado: \"AGOTADO\",\n      radar_construyendo: \"Construyendo plano holográfico...\",\n      item_desconocido: \"Item Desconocido\"\n    };\n\n    radar.style.display = 'block';\n    radar.innerHTML = `[3] ${txt.radar_construyendo}`;\n    grid.innerHTML = '';\n\n    // Verificación de seguridad de datos\n    if (!model || !model.productos) {\n      radar.innerHTML = \"<span style='color:orange'>⚠️ Error: Model.productos missing.</span>\";\n      return;\n    }\n    if (!Array.isArray(model.productos)) {\n      radar.innerHTML = \"<span style='color:red'>❌ Error: 'productos' is not an array.</span>\";\n      return;\n    }\n    if (model.productos.length === 0) {\n      radar.innerHTML = \"<span style='color:blue'>✅ Catálogo vacío / Empty catalog.</span>\";\n      return;\n    }\n\n    const sesionActiva = model.sesion && model.sesion.piloto_id && model.sesion.piloto_id !== \"invitado\";\n    radar.style.display = 'none';\n\n    model.productos.forEach(item => {\n      const cantidad = item.stock_total || item.stock || item.cantidad || 0;\n      const precioRaw = item.precio_cliente || item.mejor_precio || item.precio_isk || item.precio || 0;\n      const precio = Number(precioRaw).toLocaleString('en-US'); \n      \n      const id = item.item_id || 1;\n      const nombre = item.nombre_item || item.nombre || txt.item_desconocido;\n\n      // Lógica de estado del botón traducida\n      const estaAgotado = cantidad === 0;\n      const botonHabilitado = sesionActiva && !estaAgotado;\n      \n      let textoBoton = txt.btn_comprar;\n      if (!sesionActiva) textoBoton = txt.btn_login;\n      if (estaAgotado) textoBoton = txt.agotado;\n\n      const tarjeta = document.createElement('div');\n      tarjeta.className = 'tarjeta';\n      tarjeta.innerHTML = `\n        <img class=\"img-nave\" src=\"https://images.evetech.net/types/${id}/icon?size=256\" onerror=\"this.src='https://images.evetech.net/types/34/icon'\" alt=\"${nombre}\">\n        <div class=\"nombre\">${nombre}</div>\n        <div class=\"precio\">${txt.precio} ${precio} ISK</div>\n        <div class=\"${cantidad > 0 ? 'stock' : 'stock stock-cero'}\">${cantidad > 0 ? `${txt.stock} ${cantidad} unds.` : txt.agotado}</div>\n        <button class=\"btn-comprar\" ${!botonHabilitado ? 'disabled' : ''}>${textoBoton}</button>\n      `;\n\n      if (botonHabilitado) {\n        tarjeta.querySelector('button').addEventListener('click', () => {\n          appsmith.updateModel({ itemSeleccionado: item });\n          setTimeout(() => appsmith.triggerEvent('onComprar'), 50);\n        });\n      }\n\n      grid.appendChild(tarjeta);\n    });\n\n  } catch(error) {\n    const radar = document.getElementById('radar');\n    if (radar) {\n      radar.style.display = 'block';\n      radar.innerHTML = `<span style='color:#ef4444; font-weight:bold;'>⚠️ Fallo en la Matriz: ${error.message}</span>`;\n    }\n    console.error(\"GridFlow Logistics - Error crítico evitado:\", error);\n  }\n}\n\nappsmith.onReady(() => {\n  construirVitrina(appsmith.model);\n});\n\nappsmith.onModelChange((nuevoModelo) => {\n  construirVitrina(nuevoModelo);\n});"
+  },
+  "version": 1,
+  "widgetId": "hkipqgyux8",
+  "widgetName": "Custom1"
+}

@@ -1,0 +1,653 @@
+{
+  "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+  "allowAddNewRow": "",
+  "animateLoading": true,
+  "borderColor": "#E0DEDE",
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "borderWidth": "1",
+  "bottomRow": 105,
+  "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
+  "cachedTableData": {},
+  "canFreezeColumn": true,
+  "childStylesheet": {
+    "button": {
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none",
+      "buttonColor": "{{appsmith.theme.colors.primaryColor}}"
+    },
+    "editActions": {
+      "discardBorderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "discardButtonColor": "{{appsmith.theme.colors.primaryColor}}",
+      "saveBorderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "saveButtonColor": "{{appsmith.theme.colors.primaryColor}}"
+    },
+    "iconButton": {
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none",
+      "buttonColor": "{{appsmith.theme.colors.primaryColor}}"
+    },
+    "menuButton": {
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none",
+      "menuColor": "{{appsmith.theme.colors.primaryColor}}"
+    }
+  },
+  "columnOrder": [
+    "id_orden",
+    "piloto_comprador",
+    "estado_logistico",
+    "fecha_orden",
+    "customColumn1",
+    "customColumn3",
+    "customColumn2",
+    "piloto_transportista",
+    "productos_detalle",
+    "valor_colateral",
+    "recompensa_transporte",
+    "destino_nombre"
+  ],
+  "columnUpdatedAt": 1776038983877,
+  "columnWidthMap": {
+    "cantidad": 101,
+    "customColumn1": 114,
+    "customColumn3": 180,
+    "estacion_destino": 93,
+    "total_isk": 101,
+    "valor_colateral": 150
+  },
+  "customIsLoading": false,
+  "customIsLoadingValue": "",
+  "defaultPageSize": 0,
+  "defaultSelectedRowIndex": 0,
+  "defaultSelectedRowIndices": [
+    0
+  ],
+  "delimiter": ",",
+  "dynamicBindingPathList": [
+    {
+      "key": "accentColor"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "boxShadow"
+    },
+    {
+      "key": "tableData"
+    },
+    {
+      "key": "primaryColumns.id_orden.computedValue"
+    },
+    {
+      "key": "primaryColumns.piloto_comprador.computedValue"
+    },
+    {
+      "key": "primaryColumns.estado_logistico.computedValue"
+    },
+    {
+      "key": "primaryColumns.fecha_orden.computedValue"
+    },
+    {
+      "key": "primaryColumns.customColumn1.borderRadius"
+    },
+    {
+      "key": "primaryColumns.customColumn1.boxShadow"
+    },
+    {
+      "key": "primaryColumns.customColumn2.borderRadius"
+    },
+    {
+      "key": "primaryColumns.customColumn2.boxShadow"
+    },
+    {
+      "key": "primaryColumns.customColumn2.isDisabled"
+    },
+    {
+      "key": "primaryColumns.customColumn1.isDisabled"
+    },
+    {
+      "key": "primaryColumns.piloto_transportista.computedValue"
+    },
+    {
+      "key": "primaryColumns.productos_detalle.computedValue"
+    },
+    {
+      "key": "primaryColumns.valor_colateral.computedValue"
+    },
+    {
+      "key": "primaryColumns.recompensa_transporte.computedValue"
+    },
+    {
+      "key": "primaryColumns.destino_nombre.computedValue"
+    },
+    {
+      "key": "primaryColumns.id_orden.label"
+    },
+    {
+      "key": "primaryColumns.piloto_comprador.label"
+    },
+    {
+      "key": "primaryColumns.estado_logistico.label"
+    },
+    {
+      "key": "primaryColumns.fecha_orden.label"
+    },
+    {
+      "key": "primaryColumns.productos_detalle.label"
+    },
+    {
+      "key": "primaryColumns.piloto_transportista.label"
+    },
+    {
+      "key": "primaryColumns.customColumn1.buttonLabel"
+    },
+    {
+      "key": "primaryColumns.customColumn2.buttonLabel"
+    },
+    {
+      "key": "primaryColumns.customColumn2.label"
+    },
+    {
+      "key": "primaryColumns.customColumn2.alias"
+    },
+    {
+      "key": "primaryColumns.customColumn3.label"
+    },
+    {
+      "key": "primaryColumns.customColumn3.alias"
+    },
+    {
+      "key": "primaryColumns.customColumn1.label"
+    },
+    {
+      "key": "primaryColumns.customColumn1.alias"
+    },
+    {
+      "key": "primaryColumns.recompensa_transporte.label"
+    },
+    {
+      "key": "primaryColumns.destino_nombre.label"
+    }
+  ],
+  "dynamicPropertyPathList": [
+    {
+      "key": "tableData"
+    },
+    {
+      "key": "allowAddNewRow"
+    },
+    {
+      "key": "primaryColumns.customColumn2.onClick"
+    },
+    {
+      "key": "primaryColumns.customColumn2.isDisabled"
+    },
+    {
+      "key": "primaryColumns.customColumn1.isDisabled"
+    },
+    {
+      "key": "primaryColumns.customColumn3.onClick"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "primaryColumns.customColumn1.onClick"
+    },
+    {
+      "key": "primaryColumns.customColumn2.onClick"
+    },
+    {
+      "key": "primaryColumns.customColumn3.onClick"
+    }
+  ],
+  "enableClientSideSearch": true,
+  "endOfData": false,
+  "flexVerticalAlignment": "start",
+  "horizontalAlignment": "LEFT",
+  "inlineEditingSaveOption": "ROW_LEVEL",
+  "isLoading": false,
+  "isSortable": true,
+  "isVisible": true,
+  "isVisibleDownload": true,
+  "isVisibleFilters": false,
+  "isVisiblePagination": true,
+  "isVisibleSearch": true,
+  "key": "nbpomeihy0",
+  "label": "Data",
+  "leftColumn": 0,
+  "minWidth": 450,
+  "mobileBottomRow": 96,
+  "mobileLeftColumn": 7,
+  "mobileRightColumn": 41,
+  "mobileTopRow": 68,
+  "needsErrorInfo": false,
+  "originalBottomRow": 105,
+  "originalTopRow": 77,
+  "parentColumnSpace": 20.25,
+  "parentId": "0",
+  "parentRowSpace": 10,
+  "primaryColumns": {
+    "customColumn1": {
+      "alias": "{{ Motor_i18n.t('Dashboard_Admin', 'col_despachar') }}",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "borderRadius": "{{Table2.processedTableData.map((currentRow, currentIndex) => ( (appsmith.theme.borderRadius.appBorderRadius)))}}",
+      "boxShadow": "{{Table2.processedTableData.map((currentRow, currentIndex) => ( \"none\"))}}",
+      "buttonColor": "#86efac",
+      "buttonLabel": "{{(() => { const tableData = Table2.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => ( Motor_i18n.t('Dashboard_Admin', 'col_despachar') )) :  Motor_i18n.t('Dashboard_Admin', 'col_despachar')  })()}}",
+      "buttonStyle": "rgb(3, 179, 101)",
+      "columnType": "button",
+      "computedValue": "",
+      "currencyCode": "USD",
+      "customAlias": "",
+      "decimals": 0,
+      "enableFilter": true,
+      "enableSort": true,
+      "horizontalAlignment": "LEFT",
+      "id": "customColumn1",
+      "index": 7,
+      "isCellEditable": false,
+      "isCellVisible": true,
+      "isDerived": true,
+      "isDisabled": "{{(() => { const tableData = Table2.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => ( currentRow.estado_logistico === 'Entregado' || currentRow.estado_logistico === 'Cancelado por Cliente' )) :  currentRow.estado_logistico === 'Entregado' || currentRow.estado_logistico === 'Cancelado por Cliente'  })()}}",
+      "isDiscardVisible": true,
+      "isEditable": false,
+      "isSaveVisible": true,
+      "isVisible": true,
+      "label": "{{ Motor_i18n.t('Dashboard_Admin', 'col_despachar') }}",
+      "labelColor": "#FFFFFF",
+      "notation": "standard",
+      "onClick": "{{Marcar_Orden_Entregada.run().then(() => {\n  Leer_Todas_Ordenes.run();\n  showAlert('Orden despachada y archivada correctamente', 'success');\n});}}",
+      "originalId": "customColumn1",
+      "sticky": "",
+      "textSize": "0.875rem",
+      "thousandSeparator": true,
+      "validation": {},
+      "verticalAlignment": "CENTER",
+      "width": 150
+    },
+    "customColumn2": {
+      "alias": "{{ Motor_i18n.t('Dashboard_Admin', 'col_forzar_entrega') }}",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "borderRadius": "{{Table2.processedTableData.map((currentRow, currentIndex) => ( (appsmith.theme.borderRadius.appBorderRadius)))}}",
+      "boxShadow": "{{Table2.processedTableData.map((currentRow, currentIndex) => ( \"none\"))}}",
+      "buttonColor": "#ef4444",
+      "buttonLabel": "{{(() => { const tableData = Table2.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => ( Motor_i18n.t('Dashboard_Admin', 'col_forzar_entrega') )) :  Motor_i18n.t('Dashboard_Admin', 'col_forzar_entrega')  })()}}",
+      "buttonStyle": "rgb(3, 179, 101)",
+      "columnType": "button",
+      "computedValue": "",
+      "currencyCode": "USD",
+      "customAlias": "",
+      "decimals": 0,
+      "enableFilter": true,
+      "enableSort": true,
+      "horizontalAlignment": "LEFT",
+      "id": "customColumn2",
+      "index": 8,
+      "isCellEditable": false,
+      "isCellVisible": true,
+      "isDerived": true,
+      "isDisabled": "{{(() => { const tableData = Table2.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => ( currentRow.estado_logistico === 'Entregado' || currentRow.estado_logistico === 'Cancelado por Cliente' )) :  currentRow.estado_logistico === 'Entregado' || currentRow.estado_logistico === 'Cancelado por Cliente'  })()}}",
+      "isDiscardVisible": true,
+      "isEditable": false,
+      "isSaveVisible": true,
+      "isVisible": true,
+      "label": "{{ Motor_i18n.t('Dashboard_Admin', 'col_forzar_entrega') }}",
+      "labelColor": "#FFFFFF",
+      "notation": "standard",
+      "onClick": "{{ \n  // 1. Primero marcamos la orden como cancelada o perdida\n  Cancelar_Orden.run()\n  .then(() => {\n    // 2. Luego devolvemos el stock al inventario de GridFlow\n    return Reversar_Inventario.run();\n  })\n  .then(() => {\n    showAlert('Protocolo de Siniestro ejecutado: Orden cancelada e inventario restituido.', 'warning');\n    return Leer_Todas_Ordenes.run(); // Refrescamos el radar\n  })\n  .catch((e) => showAlert('Error en el protocolo de siniestro: ' + e.message, 'error'))\n}}",
+      "originalId": "customColumn2",
+      "sticky": "",
+      "textSize": "0.875rem",
+      "thousandSeparator": true,
+      "validation": {},
+      "verticalAlignment": "CENTER",
+      "width": 150
+    },
+    "customColumn3": {
+      "alias": "{{ Motor_i18n.t('Dashboard_Admin', 'col_confirmar') }}",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "buttonStyle": "rgb(3, 179, 101)",
+      "columnType": "iconButton",
+      "computedValue": "",
+      "currencyCode": "USD",
+      "customAlias": "",
+      "decimals": 0,
+      "enableFilter": true,
+      "enableSort": true,
+      "horizontalAlignment": "LEFT",
+      "iconName": "confirm",
+      "id": "customColumn3",
+      "index": 9,
+      "isCellEditable": false,
+      "isCellVisible": true,
+      "isDerived": true,
+      "isDisabled": false,
+      "isDiscardVisible": true,
+      "isEditable": false,
+      "isSaveVisible": true,
+      "isVisible": true,
+      "label": "{{ Motor_i18n.t('Dashboard_Admin', 'col_confirmar') }}",
+      "labelColor": "#FFFFFF",
+      "notation": "standard",
+      "onClick": "{{ \n  Cerrar_Orden_Final.run()\n  .then(() => {\n    showAlert('Contrato completado exitosamente. Fondos liberados.', 'success');\n    return Leer_Todas_Ordenes.run(); // Refrescamos el radar\n  })\n  .catch((e) => showAlert('Error al cerrar orden: ' + e.message, 'error'))\n}}",
+      "originalId": "customColumn3",
+      "sticky": "",
+      "textSize": "0.875rem",
+      "thousandSeparator": true,
+      "validation": {},
+      "verticalAlignment": "CENTER",
+      "width": 150
+    },
+    "destino_nombre": {
+      "alias": "destino_nombre",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "cellBackground": "",
+      "columnType": "text",
+      "computedValue": "{{(() => { const tableData = Table2.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => ( currentRow.destino_nombre )) :  currentRow.destino_nombre  })()}}",
+      "currencyCode": "USD",
+      "decimals": 0,
+      "enableFilter": true,
+      "enableSort": true,
+      "fontStyle": "",
+      "horizontalAlignment": "LEFT",
+      "id": "destino_nombre",
+      "index": 8,
+      "isCellEditable": false,
+      "isCellVisible": true,
+      "isDerived": false,
+      "isDisabled": false,
+      "isDiscardVisible": true,
+      "isEditable": false,
+      "isSaveVisible": true,
+      "isVisible": true,
+      "label": "{{ Motor_i18n.t('Dashboard_Admin', 'col_destino') }}",
+      "notation": "standard",
+      "originalId": "destino_nombre",
+      "sticky": "",
+      "textColor": "",
+      "textSize": "0.875rem",
+      "thousandSeparator": true,
+      "validation": {},
+      "verticalAlignment": "CENTER",
+      "width": 150
+    },
+    "estado_logistico": {
+      "alias": "estado_logistico",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "columnType": "text",
+      "computedValue": "{{(() => { const tableData = Table2.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => ( \n  currentRow[\"estado_logistico\"] === 'Entregado' ? Motor_i18n.t('Dashboard_Admin', 'estado_entregado') :\n  currentRow[\"estado_logistico\"] === 'Cancelado por Cliente' ? Motor_i18n.t('Dashboard_Admin', 'estado_cancelado') :\n  currentRow[\"estado_logistico\"] === 'En Tránsito' ? Motor_i18n.t('Dashboard_Admin', 'estado_en_transito') :\n  currentRow[\"estado_logistico\"] === 'Solicitado' ? Motor_i18n.t('Dashboard_Admin', 'estado_solicitado') :\n  currentRow[\"estado_logistico\"] \n)) :  \n  currentRow[\"estado_logistico\"] === 'Entregado' ? Motor_i18n.t('Dashboard_Admin', 'estado_entregado') :\n  currentRow[\"estado_logistico\"] === 'Cancelado por Cliente' ? Motor_i18n.t('Dashboard_Admin', 'estado_cancelado') :\n  currentRow[\"estado_logistico\"] === 'En Tránsito' ? Motor_i18n.t('Dashboard_Admin', 'estado_en_transito') :\n  currentRow[\"estado_logistico\"] === 'Solicitado' ? Motor_i18n.t('Dashboard_Admin', 'estado_solicitado') :\n  currentRow[\"estado_logistico\"] \n })()}}",
+      "currencyCode": "USD",
+      "decimals": 0,
+      "enableFilter": true,
+      "enableSort": true,
+      "horizontalAlignment": "LEFT",
+      "id": "estado_logistico",
+      "index": 5,
+      "isCellEditable": false,
+      "isCellVisible": true,
+      "isDerived": false,
+      "isDisabled": false,
+      "isDiscardVisible": true,
+      "isEditable": false,
+      "isSaveVisible": true,
+      "isVisible": true,
+      "label": "{{ Motor_i18n.t('Dashboard_Admin', 'col_estado_logistico') }}",
+      "notation": "standard",
+      "originalId": "estado_logistico",
+      "sticky": "",
+      "textSize": "0.875rem",
+      "thousandSeparator": true,
+      "validation": {},
+      "verticalAlignment": "CENTER",
+      "width": 150
+    },
+    "fecha_orden": {
+      "alias": "fecha_orden",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "columnType": "text",
+      "computedValue": "{{(() => { const tableData = Table2.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => ( moment(currentRow.fecha_orden).format('YYYY-MM-DD HH:mm') )) :  moment(currentRow.fecha_orden).format('YYYY-MM-DD HH:mm')  })()}}",
+      "currencyCode": "USD",
+      "decimals": 0,
+      "enableFilter": true,
+      "enableSort": true,
+      "horizontalAlignment": "LEFT",
+      "id": "fecha_orden",
+      "index": 6,
+      "isCellEditable": false,
+      "isCellVisible": true,
+      "isDerived": false,
+      "isDisabled": false,
+      "isDiscardVisible": true,
+      "isEditable": false,
+      "isSaveVisible": true,
+      "isVisible": true,
+      "label": "{{ Motor_i18n.t('Dashboard_Admin', 'col_fecha_orden') }}",
+      "notation": "standard",
+      "originalId": "fecha_orden",
+      "sticky": "",
+      "textSize": "0.875rem",
+      "thousandSeparator": true,
+      "validation": {},
+      "verticalAlignment": "CENTER",
+      "width": 150
+    },
+    "id_orden": {
+      "alias": "id_orden",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "columnType": "number",
+      "computedValue": "{{(() => { const tableData = Table2.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => ( currentRow.id_orden )) :  currentRow.id_orden  })()}}",
+      "currencyCode": "USD",
+      "decimals": 0,
+      "enableFilter": true,
+      "enableSort": true,
+      "horizontalAlignment": "LEFT",
+      "id": "id_orden",
+      "index": 0,
+      "isCellEditable": false,
+      "isCellVisible": true,
+      "isDerived": false,
+      "isDisabled": false,
+      "isDiscardVisible": true,
+      "isEditable": false,
+      "isSaveVisible": true,
+      "isVisible": true,
+      "label": "{{ Motor_i18n.t('Dashboard_Admin', 'col_id_orden') }}",
+      "notation": "standard",
+      "originalId": "id_orden",
+      "sticky": "",
+      "textSize": "0.875rem",
+      "thousandSeparator": true,
+      "validation": {},
+      "verticalAlignment": "CENTER",
+      "width": 150
+    },
+    "piloto_comprador": {
+      "alias": "piloto_comprador",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "columnType": "number",
+      "computedValue": "{{(() => { const tableData = Table2.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => ( currentRow.piloto_comprador )) :  currentRow.piloto_comprador  })()}}",
+      "currencyCode": "USD",
+      "decimals": 0,
+      "enableFilter": true,
+      "enableSort": true,
+      "horizontalAlignment": "LEFT",
+      "id": "piloto_comprador",
+      "index": 1,
+      "isCellEditable": false,
+      "isCellVisible": true,
+      "isDerived": false,
+      "isDisabled": false,
+      "isDiscardVisible": true,
+      "isEditable": false,
+      "isSaveVisible": true,
+      "isVisible": true,
+      "label": "{{ Motor_i18n.t('Dashboard_Admin', 'col_comprador') }}",
+      "notation": "standard",
+      "originalId": "piloto_comprador",
+      "sticky": "",
+      "textSize": "0.875rem",
+      "thousandSeparator": true,
+      "validation": {},
+      "verticalAlignment": "CENTER",
+      "width": 150
+    },
+    "piloto_transportista": {
+      "alias": "piloto_transportista",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "cellBackground": "",
+      "columnType": "text",
+      "computedValue": "{{(() => { const tableData = Table2.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"piloto_transportista\"])) : piloto_transportista })()}}",
+      "currencyCode": "USD",
+      "decimals": 0,
+      "enableFilter": true,
+      "enableSort": true,
+      "fontStyle": "",
+      "horizontalAlignment": "LEFT",
+      "id": "piloto_transportista",
+      "index": 2,
+      "isCellEditable": false,
+      "isCellVisible": true,
+      "isDerived": false,
+      "isDisabled": false,
+      "isDiscardVisible": true,
+      "isEditable": false,
+      "isSaveVisible": true,
+      "isVisible": true,
+      "label": "{{ Motor_i18n.t('Dashboard_Admin', 'col_piloto') }}",
+      "notation": "standard",
+      "originalId": "piloto_transportista",
+      "sticky": "",
+      "textColor": "",
+      "textSize": "0.875rem",
+      "thousandSeparator": true,
+      "validation": {},
+      "verticalAlignment": "CENTER",
+      "width": 150
+    },
+    "productos_detalle": {
+      "alias": "productos_detalle",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "cellBackground": "",
+      "columnType": "text",
+      "computedValue": "{{(() => { const tableData = Table2.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"productos_detalle\"])) : productos_detalle })()}}",
+      "currencyCode": "USD",
+      "decimals": 0,
+      "enableFilter": true,
+      "enableSort": true,
+      "fontStyle": "",
+      "horizontalAlignment": "LEFT",
+      "id": "productos_detalle",
+      "index": 5,
+      "isCellEditable": false,
+      "isCellVisible": true,
+      "isDerived": false,
+      "isDisabled": false,
+      "isDiscardVisible": true,
+      "isEditable": false,
+      "isSaveVisible": true,
+      "isVisible": true,
+      "label": "{{ Motor_i18n.t('Dashboard_Admin', 'col_productos') }}",
+      "notation": "standard",
+      "originalId": "productos_detalle",
+      "sticky": "",
+      "textColor": "",
+      "textSize": "0.875rem",
+      "thousandSeparator": true,
+      "validation": {},
+      "verticalAlignment": "CENTER",
+      "width": 150
+    },
+    "recompensa_transporte": {
+      "alias": "recompensa_transporte",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "cellBackground": "",
+      "columnType": "number",
+      "computedValue": "{{(() => { const tableData = Table2.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (Number(currentRow[\"recompensa_transporte\"]).toLocaleString('en-US'))) : Number(currentRow[\"recompensa_transporte\"]).toLocaleString('en-US') })()}}",
+      "currencyCode": "USD",
+      "decimals": 0,
+      "enableFilter": true,
+      "enableSort": true,
+      "fontStyle": "",
+      "horizontalAlignment": "LEFT",
+      "id": "recompensa_transporte",
+      "index": 7,
+      "isCellEditable": false,
+      "isCellVisible": true,
+      "isDerived": false,
+      "isDisabled": false,
+      "isDiscardVisible": true,
+      "isEditable": false,
+      "isSaveVisible": true,
+      "isVisible": true,
+      "label": "{{ Motor_i18n.t('Dashboard_Admin', 'col_transporte') }}",
+      "notation": "standard",
+      "originalId": "recompensa_transporte",
+      "sticky": "",
+      "textColor": "",
+      "textSize": "0.875rem",
+      "thousandSeparator": true,
+      "validation": {},
+      "verticalAlignment": "CENTER",
+      "width": 150
+    },
+    "valor_colateral": {
+      "alias": "valor_colateral",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "cellBackground": "",
+      "columnType": "number",
+      "computedValue": "{{(() => { const tableData = Table2.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (Number(currentRow[\"valor_colateral\"]).toLocaleString('en-US'))) : Number(currentRow[\"valor_colateral\"]).toLocaleString('en-US') })()}}",
+      "currencyCode": "USD",
+      "decimals": 0,
+      "enableFilter": true,
+      "enableSort": true,
+      "fontStyle": "",
+      "horizontalAlignment": "LEFT",
+      "id": "valor_colateral",
+      "index": 6,
+      "isCellEditable": false,
+      "isCellVisible": true,
+      "isDerived": false,
+      "isDisabled": false,
+      "isDiscardVisible": true,
+      "isEditable": false,
+      "isSaveVisible": true,
+      "isVisible": true,
+      "label": "colateral",
+      "notation": "standard",
+      "originalId": "valor_colateral",
+      "sticky": "",
+      "textColor": "",
+      "textSize": "0.875rem",
+      "thousandSeparator": true,
+      "validation": {},
+      "verticalAlignment": "CENTER",
+      "width": 150
+    }
+  },
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 64,
+  "searchKey": "",
+  "tableData": "{{Leer_Todas_Ordenes.data}}",
+  "textSize": "0.875rem",
+  "topRow": 77,
+  "totalRecordsCount": 0,
+  "type": "TABLE_WIDGET_V2",
+  "version": 2,
+  "verticalAlignment": "CENTER",
+  "widgetId": "2c7lr7xn44",
+  "widgetName": "Table2"
+}

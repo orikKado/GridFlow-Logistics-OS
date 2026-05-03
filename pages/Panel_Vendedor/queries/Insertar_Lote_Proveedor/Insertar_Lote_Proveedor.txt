@@ -1,0 +1,9 @@
+INSERT INTO inventario_real (item_id, proveedor_id, cantidad, precio_base, modelo_logistico, estado_financiero)
+VALUES (
+    {{sel_item_venta.selectedOptionValue}}, 
+    {{appsmith.store.piloto_id}}, 
+    {{inp_cantidad_venta.text}}, 
+    {{inp_precio_venta.text}}, 
+    'Consignacion', 
+    'En Consignacion'
+);

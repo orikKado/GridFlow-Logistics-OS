@@ -1,0 +1,3 @@
+UPDATE usuarios 
+SET idioma_preferido = '{{ sel_idioma.selectedOptionValue }}'
+WHERE personaje_id = {{ appsmith.store.piloto_id }};

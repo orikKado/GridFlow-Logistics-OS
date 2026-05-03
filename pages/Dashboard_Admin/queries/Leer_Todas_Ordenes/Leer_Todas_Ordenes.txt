@@ -1,0 +1,30 @@
+SELECT 
+    o.id_orden,
+    u.nombre AS piloto_comprador,
+    t.nombre AS piloto_transportista,
+    -- 📦 RESUMEN DE PRODUCTOS
+    STRING_AGG(cm.nombre_item || ' (x' || det.cantidad || ')', ', ') AS productos_detalle,
+    -- 💰 VALORES PARA CONTRATO COURIER
+    SUM(det.cantidad * det.precio_unitario)::numeric(20,2) AS valor_colateral,
+    SUM(det.flete_cobrado)::numeric(20,2) AS recompensa_transporte,
+    o.estado_logistico,
+    -- 🛰️ REPARACIÓN DE ESTACIÓN
+    ed.nombre_estacion AS destino_nombre,
+    o.fecha_orden
+FROM ordenes o
+LEFT JOIN usuarios u ON o.cliente_id = u.personaje_id
+LEFT JOIN usuarios t ON o.transportista_id = t.personaje_id
+LEFT JOIN detalle_ordenes det ON o.id_orden = det.id_orden
+LEFT JOIN inventario_real ir ON det.id_lote = ir.id_lote
+LEFT JOIN catalogo_maestro cm ON ir.item_id = cm.item_id
+-- 🛡️ UNIÓN CLAVE
+LEFT JOIN estaciones_entrega ed ON o.estacion_destino::text = ed.id_estacion::text
+WHERE '{{appsmith.store.piloto_rol}}' = 'administrador'
+GROUP BY 
+    o.id_orden, 
+    u.nombre, 
+    t.nombre, 
+    o.estado_logistico, 
+    ed.nombre_estacion, 
+    o.fecha_orden
+ORDER BY o.id_orden DESC;

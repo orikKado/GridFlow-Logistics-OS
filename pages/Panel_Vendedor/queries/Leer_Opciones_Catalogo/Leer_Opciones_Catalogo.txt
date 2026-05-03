@@ -1,0 +1,3 @@
+SELECT item_id, nombre_item 
+FROM catalogo_maestro 
+ORDER BY nombre_item ASC;

@@ -1,0 +1,16 @@
+{
+  "gitSyncId": "69cb24d97fa34d5debf7475f_47416785-9a46-4991-98ce-606aae8ad5a5",
+  "id": "Tablero_Transportista_Motor_i18n",
+  "unpublishedCollection": {
+    "name": "Motor_i18n",
+    "pageId": "Tablero_Transportista",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": [
+      {
+        "name": "diccionario",
+        "value": "{\n  es: {\n    Tablero_Transportista: {\n      btn_cerrar_sesion: \"Cerrar Sesión\",\n      btn_volver_tienda: \"Volver a Tienda\",\n      col_orden: \"Orden\",\n      col_fecha: \"Fecha\",\n      col_destino: \"Destino\",\n      col_saltos: \"Saltos\",\n      col_volumen: \"Volumen m3\",\n      col_colateral: \"Colateral\",\n      col_recompensa: \"Recompensa\",\n      col_estado: \"Estado\",\n      btn_aceptar_contrato: \"Aceptar Contrato\",\n      btn_confirmar_recogida: \"Confirmar Recogida\",\n      btn_confirmar_entrega: \"Confirmar Entrega\",\n      btn_confirmar_entrega: \"Confirmar Entrega\",\n      msg_cierre_sesion: \"Sesión cerrada de forma segura.\"\n    }\n  },\n  en: {\n    Tablero_Transportista: {\n      btn_cerrar_sesion: \"Log Out\",\n      btn_volver_tienda: \"Back to Store\",\n      col_orden: \"Order\",\n      col_fecha: \"Date\",\n      col_destino: \"Destination\",\n      col_saltos: \"Jumps\",\n      col_volumen: \"Volume m3\",\n      col_colateral: \"Collateral\",\n      col_recompensa: \"Reward\",\n      col_estado: \"Status\",\n      btn_aceptar_contrato: \"Accept Contract\",\n      btn_confirmar_recogida: \"Confirm Pickup\",\n      btn_confirmar_entrega: \"Confirm Delivery\",\n      btn_confirmar_entrega: \"Confirm Delivery\",\n      msg_cierre_sesion: \"Session safely closed.\"\n    }\n  }\n}"
+      }
+    ]
+  }
+}

@@ -1,0 +1,16 @@
+SELECT 
+  o.fecha_orden AS fecha_venta,
+  cm.nombre_item,
+  det.cantidad,
+  -- 🛡️ BLINDAJE FINANCIERO
+  (det.cantidad * ir.precio_base)::numeric(20,2) AS monto_isk,
+  det.estado_pago
+FROM detalle_ordenes det
+JOIN ordenes o ON det.id_orden = o.id_orden
+JOIN inventario_real ir ON det.id_lote = ir.id_lote
+JOIN catalogo_maestro cm ON ir.item_id = cm.item_id
+-- 🔒 BLOQUEO ESTRICTO: Solo muestra los items donde el piloto actual es el proveedor
+WHERE ir.proveedor_id::text = {{appsmith.store.piloto_id}}::text
+  AND det.estado_pago IN ('Solicitado', 'Pagado')
+  AND o.fecha_orden >= NOW() - INTERVAL '30 days'
+ORDER BY o.fecha_orden DESC;

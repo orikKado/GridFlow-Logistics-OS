@@ -1,0 +1,1 @@
+SELECT id_estacion, nombre_estacion, saltos_desde_origen FROM estaciones_entrega;

@@ -1,0 +1,11 @@
+{
+  "gitSyncId": "69cb24d97fa34d5debf7475f_45883974-5fbe-46a2-a4ac-0d70dfca72f9",
+  "id": "Dashboard_Admin_Radar_Admin",
+  "unpublishedCollection": {
+    "name": "Radar_Admin",
+    "pageId": "Dashboard_Admin",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": []
+  }
+}

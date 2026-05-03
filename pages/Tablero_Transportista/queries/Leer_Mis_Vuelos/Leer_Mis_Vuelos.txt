@@ -1,0 +1,21 @@
+SELECT 
+    o.id_orden,
+    o.fecha_orden,
+    ed.nombre_estacion AS destino_texto,
+    ed.saltos_desde_origen AS saltos,
+    -- 🛡️ Calculamos el colateral real (valor de la carga con margen)
+    SUM(det.cantidad * det.precio_unitario)::numeric(20,2) AS colateral_isk,
+    -- 🛡️ Calculamos la recompensa total (flete dinámico guardado)
+    SUM(det.flete_cobrado)::numeric(20,2) AS recompensa_isk,
+    -- 🛡️ Calculamos el volumen total con precisión de 4 decimales
+    SUM(det.cantidad * cm.volumen_unitario)::numeric(20,4) AS volumen_total_m3,
+    o.estado_logistico
+FROM ordenes o
+JOIN detalle_ordenes det ON o.id_orden = det.id_orden
+JOIN inventario_real ir ON det.id_lote = ir.id_lote
+JOIN catalogo_maestro cm ON ir.item_id = cm.item_id
+JOIN estaciones_entrega ed ON o.estacion_destino::text = ed.id_estacion::text
+WHERE o.transportista_id::text = {{ appsmith.store.piloto_id.toString() }}
+  AND o.estado_logistico IN ('Asignado', 'En Tránsito')
+GROUP BY o.id_orden, o.fecha_orden, ed.nombre_estacion, ed.saltos_desde_origen, o.estado_logistico
+ORDER BY o.fecha_orden ASC;

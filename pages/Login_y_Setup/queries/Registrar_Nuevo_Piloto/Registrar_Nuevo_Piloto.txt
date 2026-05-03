@@ -1,0 +1,16 @@
+INSERT INTO usuarios (
+  personaje_id, 
+  nombre, 
+  rol, 
+  idioma_preferido, 
+  es_prime, 
+  saldo_puntos
+)
+VALUES (
+  {{appsmith.store.piloto_id}}, 
+  {{appsmith.store.piloto_nombre}}, 
+  'cliente', 
+  'ES', 
+  FALSE, 
+  0
+);

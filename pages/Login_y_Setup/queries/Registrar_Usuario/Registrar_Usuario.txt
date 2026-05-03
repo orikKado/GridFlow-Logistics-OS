@@ -1,0 +1,10 @@
+INSERT INTO usuarios (personaje_id, nombre, rol, idioma_preferido)
+VALUES (
+    {{Identificar_Personaje.data.CharacterID}}, 
+    {{Identificar_Personaje.data.CharacterName}}, 
+    'cliente', 
+    'EN'
+)
+ON CONFLICT (personaje_id) 
+DO UPDATE SET 
+    nombre = EXCLUDED.nombre;

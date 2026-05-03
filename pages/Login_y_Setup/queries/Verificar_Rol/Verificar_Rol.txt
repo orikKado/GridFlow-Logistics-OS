@@ -1,0 +1,3 @@
+SELECT personaje_id, nombre, rol 
+FROM usuarios 
+WHERE personaje_id = {{Identificar_Personaje.data.CharacterID}};

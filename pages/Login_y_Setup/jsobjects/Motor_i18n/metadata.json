@@ -1,0 +1,16 @@
+{
+  "gitSyncId": "69cb24d97fa34d5debf7475f_e2587ae5-3ce8-4ef3-b330-f6a09be60a8c",
+  "id": "Login_y_Setup_Motor_i18n",
+  "unpublishedCollection": {
+    "name": "Motor_i18n",
+    "pageId": "Login_y_Setup",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": [
+      {
+        "name": "diccionario",
+        "value": "{\n  es: {\n    Login_y_Setup: {\n      titulo: \"Bienvenido a Gridflow\",\n      lbl_idioma: \"Idioma\",\n      btn_login: \"Iniciar sesión con EVE Online\"\n    }\n  },\n  en: {\n    Login_y_Setup: {\n      titulo: \"Welcome to Gridflow\",\n      lbl_idioma: \"Language\",\n      btn_login: \"Log in with EVE Online\"\n    }\n  }\n}"
+      }
+    ]
+  }
+}

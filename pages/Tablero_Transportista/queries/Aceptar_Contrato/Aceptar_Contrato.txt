@@ -1,0 +1,5 @@
+UPDATE ordenes 
+SET 
+  estado_logistico = 'Asignado',
+  transportista_id = {{ appsmith.store.piloto_id.toString() }}
+WHERE id_orden = {{ tbl_contratos.triggeredRow.id_orden }};

@@ -1,0 +1,55 @@
+{
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 12,
+  "dynamicBindingPathList": [
+    {
+      "key": "truncateButtonColor"
+    },
+    {
+      "key": "fontFamily"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "text"
+    }
+  ],
+  "dynamicHeight": "AUTO_HEIGHT",
+  "dynamicTriggerPathList": [],
+  "fontFamily": "{{appsmith.theme.fontFamily.appFont}}",
+  "fontSize": "1rem",
+  "fontStyle": "BOLD",
+  "isLoading": false,
+  "isVisible": true,
+  "key": "mvmi4uslhl",
+  "leftColumn": 22,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "minWidth": 450,
+  "mobileBottomRow": 14,
+  "mobileLeftColumn": 22,
+  "mobileRightColumn": 38,
+  "mobileTopRow": 10,
+  "needsErrorInfo": false,
+  "originalBottomRow": 12,
+  "originalTopRow": 8,
+  "overflow": "NONE",
+  "parentColumnSpace": 7.5625,
+  "parentId": "2bn5vbk6ea",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 49,
+  "shouldTruncate": false,
+  "text": "{{\n  (() => {\n    const item = Custom1.model.itemSeleccionado;\n    const loteSeleccionado = tbl_ofertas.selectedRow;\n    const cantidad = Number(inp_cantidad_compra.text || 0);\n    const config = Leer_Config_Tienda.data[0];\n    const margen = Number(config?.margen_ganancia_default || 0.10);\n\n    if (!item || cantidad <= 0) return \"0 ISK\";\n\n    // 🛡️ Blindaje de precio: \n    // 1. Buscamos el precio calculado en la fila de la tabla\n    // 2. Si no hay selección, usamos el precio que trajo la vitrina\n    // 3. Si todo falla, calculamos manualmente sobre el precio base\n    let precioParaCalculo = Number(loteSeleccionado?.precio_cliente || item?.precio_cliente || 0);\n\n    if (precioParaCalculo === 0) {\n      const precioBase = Number(item.mejor_precio || item.precio_isk || 0);\n      precioParaCalculo = precioBase * (1 + margen);\n    }\n\n    const subtotal = cantidad * precioParaCalculo;\n\n    return Math.round(subtotal).toLocaleString('en-US') + \" ISK\";\n  })()\n}}",
+  "textAlign": "LEFT",
+  "textColor": "#231F20",
+  "topRow": 8,
+  "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
+  "type": "TEXT_WIDGET",
+  "version": 1,
+  "widgetId": "6aceisovk6",
+  "widgetName": "Text8"
+}

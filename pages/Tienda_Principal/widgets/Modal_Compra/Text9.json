@@ -1,0 +1,55 @@
+{
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 16,
+  "dynamicBindingPathList": [
+    {
+      "key": "truncateButtonColor"
+    },
+    {
+      "key": "fontFamily"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "text"
+    }
+  ],
+  "dynamicHeight": "AUTO_HEIGHT",
+  "dynamicTriggerPathList": [],
+  "fontFamily": "{{appsmith.theme.fontFamily.appFont}}",
+  "fontSize": "1rem",
+  "fontStyle": "BOLD",
+  "isLoading": false,
+  "isVisible": true,
+  "key": "mvmi4uslhl",
+  "leftColumn": 22,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "minWidth": 450,
+  "mobileBottomRow": 21,
+  "mobileLeftColumn": 23,
+  "mobileRightColumn": 39,
+  "mobileTopRow": 17,
+  "needsErrorInfo": false,
+  "originalBottomRow": 16,
+  "originalTopRow": 12,
+  "overflow": "NONE",
+  "parentColumnSpace": 7.5625,
+  "parentId": "2bn5vbk6ea",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 53,
+  "shouldTruncate": false,
+  "text": "{{\n  (() => {\n    const item = Custom1.model.itemSeleccionado;\n    const cant = Number(inp_cantidad_compra.text || 0);\n    const estID = sel_estacion.selectedOptionValue;\n\n    // 🛰️ Capturamos la etiqueta traducida del motor\n    const etiqueta = Motor_i18n.t('Tienda_Principal', 'lbl_flete');\n\n    if (!item || cant <= 0 || !estID) return etiqueta + \": 0 ISK\";\n\n    const est = Leer_Estaciones.data.find(e => e.id_estacion == estID);\n    const saltos = Number(est?.saltos_desde_origen || 0);\n    \n    // Precio base para el cálculo del 0.1% de flete\n    const precioVenta = Number(item.mejor_precio || item.precio_isk || 0);\n    const subtotal = cant * precioVenta;\n    \n    // 🧮 Fórmula: Base (2.5M) + Distancia (800k/salto) + Volumen (180/m3) + Valor (0.1%)\n    const flete = 2500000 + (saltos * 800000) + (cant * Number(item.volumen_unitario || 0) * 180) + (subtotal * 0.001);\n\n    // Retornamos la etiqueta y el valor formateado\n    return etiqueta + \": \" + flete.toLocaleString('en-US') + \" ISK\";\n  })()\n}}",
+  "textAlign": "LEFT",
+  "textColor": "#231F20",
+  "topRow": 12,
+  "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
+  "type": "TEXT_WIDGET",
+  "version": 1,
+  "widgetId": "g5nnbs9vi0",
+  "widgetName": "Text9"
+}

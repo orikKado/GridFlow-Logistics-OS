@@ -1,0 +1,3 @@
+UPDATE ordenes 
+SET estado_logistico = 'En Tránsito'
+WHERE id_orden = {{ tbl_mis_vuelos.triggeredRow.id_orden }};

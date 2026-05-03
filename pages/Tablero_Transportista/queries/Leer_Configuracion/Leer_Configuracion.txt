@@ -1,0 +1,1 @@
+SELECT valor_texto FROM configuracion_global WHERE parametro = 'estacion_origen_central';

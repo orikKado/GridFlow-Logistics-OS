@@ -1,0 +1,8 @@
+SELECT 
+    *,
+    -- Calculamos el precio de venta dinámico para la vitrina
+    ROUND(precio_base * (1 + (SELECT margen_ganancia_default FROM configuracion_global WHERE id = 1))) AS precio_cliente
+FROM inventario_real
+WHERE item_id = {{ Custom1.model.itemSeleccionado?.item_id || 0 }}
+  AND cantidad > 0
+ORDER BY precio_base ASC;

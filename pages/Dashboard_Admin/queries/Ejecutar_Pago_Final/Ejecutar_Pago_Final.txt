@@ -1,0 +1,9 @@
+UPDATE detalle_ordenes
+SET estado_pago = 'Pagado'
+WHERE id_detalle IN (
+    SELECT det.id_detalle 
+    FROM detalle_ordenes det
+    JOIN inventario_real ir ON det.id_lote = ir.id_lote
+    WHERE ir.proveedor_id::text = {{ tbl_pagos_pendientes.selectedRow?.personaje_id?.toString() || '0' }}
+      AND det.estado_pago = 'Solicitado'
+);

@@ -1,0 +1,57 @@
+{
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 69,
+  "boxShadow": "none",
+  "buttonColor": "#93c5fd",
+  "buttonVariant": "PRIMARY",
+  "disabledWhenInvalid": false,
+  "dynamicBindingPathList": [
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "text"
+    }
+  ],
+  "dynamicPropertyPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
+  "isDefaultClickDisabled": true,
+  "isDisabled": false,
+  "isLoading": false,
+  "isVisible": true,
+  "key": "pr6y9b5qhv",
+  "leftColumn": 20,
+  "minWidth": 120,
+  "mobileBottomRow": 67,
+  "mobileLeftColumn": 20,
+  "mobileRightColumn": 36,
+  "mobileTopRow": 63,
+  "needsErrorInfo": false,
+  "onClick": "{{ \n  Insertar_Catalogo.run()\n  .then(() => {\n    // 1. Muestra un mensaje de éxito verde\n    showAlert('Ítem añadido al catálogo correctamente', 'success');\n    \n    // 2. Refresca la tabla para que veas la nave aparecer al instante\n    // (Asegúrate de que 'Leer_Catalogo' sea el nombre real de la consulta que llena tu tabla)\n    return Leer_Catalogo.run(); \n  })\n  .then(() => {\n    // 3. Limpia las casillas para que queden listas para el siguiente registro\n    resetWidget('inp_id');\n    resetWidget('inp_nombre');\n    resetWidget('inp_item_volumen');\n    resetWidget('chk_nueva_categoria');\n    resetWidget('inp_nueva_categoria');\n  })\n  .catch((error) => {\n    // Si realmente hay un error, te lo muestra limpiamente\n    showAlert('Error: ' + error.message, 'error');\n  })\n}}",
+  "originalBottomRow": 69,
+  "originalTopRow": 65,
+  "parentColumnSpace": 20.25,
+  "parentId": "0",
+  "parentRowSpace": 10,
+  "placement": "CENTER",
+  "recaptchaType": "V3",
+  "renderMode": "CANVAS",
+  "resetFormOnClick": false,
+  "responsiveBehavior": "hug",
+  "rightColumn": 36,
+  "text": "{{ Motor_i18n.t('Dashboard_Admin', 'btn_add_catalog') }}",
+  "topRow": 65,
+  "type": "BUTTON_WIDGET",
+  "version": 1,
+  "widgetId": "a7qnlqmyio",
+  "widgetName": "Button1"
+}

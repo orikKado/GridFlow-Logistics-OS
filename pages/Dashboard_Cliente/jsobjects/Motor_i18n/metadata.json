@@ -1,0 +1,16 @@
+{
+  "gitSyncId": "69cb24d97fa34d5debf7475f_100f2acf-8626-4d81-9efc-1cf1bfc95be2",
+  "id": "Dashboard_Cliente_Motor_i18n",
+  "unpublishedCollection": {
+    "name": "Motor_i18n",
+    "pageId": "Dashboard_Cliente",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": [
+      {
+        "name": "diccionario",
+        "value": "{\n  es: {\n    Dashboard_Cliente: {\n      btn_volver_tienda: \"Volver a la tienda\",\n      btn_cerrar_sesion: \"Cerrar Sesión\",\n      msg_cierre_sesion: \"Sesión cerrada de forma segura.\",\n      col_orden: \"Orden\",\n      col_producto: \"Producto\",\n      col_cantidad: \"Cantidad\",\n      col_total: \"Total ISK\",\n      col_destino: \"Destino\",\n      col_estado: \"Estado\",\n      col_fecha: \"Fecha Orden\",\n      col_accion: \"Cancelar\",\n      estado_entregado: \"Entregado\",\n      estado_cancelado: \"Cancelado por Cliente\",\n      estado_solicitado: \"Solicitado\",\n      estado_en_transito: \"En Tránsito\",\n      estado_pendiente: \"Pendiente de Entrega\"\n    }\n  },\n  en: {\n    Dashboard_Cliente: {\n      btn_volver_tienda: \"Back to Store\",\n      btn_cerrar_sesion: \"Log Out\",\n      msg_cierre_sesion: \"Session safely closed.\",\n      col_orden: \"Order\",\n      col_producto: \"Product\",\n      col_cantidad: \"Quantity\",\n      col_total: \"Total ISK\",\n      col_destino: \"Destination\",\n      col_estado: \"Status\",\n      col_fecha: \"Order Date\",\n      col_accion: \"Cancel\",\n      estado_entregado: \"Delivered\",\n      estado_cancelado: \"Cancelled by Client\",\n      estado_solicitado: \"Requested\",\n      estado_en_transito: \"In Transit\",\n      estado_pendiente: \"Pending Delivery\"\n    }\n  }\n}"
+      }
+    ]
+  }
+}

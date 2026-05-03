@@ -1,0 +1,11 @@
+{
+  "gitSyncId": "69cb24d97fa34d5debf7475f_fefb603c-b0d3-46ac-ac81-9e5d53224944",
+  "id": "Tienda_Principal_Gestor_Sesion",
+  "unpublishedCollection": {
+    "name": "Gestor_Sesion",
+    "pageId": "Tienda_Principal",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": []
+  }
+}

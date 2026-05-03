@@ -1,0 +1,309 @@
+{
+  "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+  "animateLoading": true,
+  "borderColor": "#E0DEDE",
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "borderWidth": "1",
+  "bottomRow": 116,
+  "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
+  "cachedTableData": {},
+  "canFreezeColumn": true,
+  "cellBackground": "",
+  "childStylesheet": {
+    "button": {
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none",
+      "buttonColor": "{{appsmith.theme.colors.primaryColor}}"
+    },
+    "editActions": {
+      "discardBorderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "discardButtonColor": "{{appsmith.theme.colors.primaryColor}}",
+      "saveBorderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "saveButtonColor": "{{appsmith.theme.colors.primaryColor}}"
+    },
+    "iconButton": {
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none",
+      "buttonColor": "{{appsmith.theme.colors.primaryColor}}"
+    },
+    "menuButton": {
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none",
+      "menuColor": "{{appsmith.theme.colors.primaryColor}}"
+    }
+  },
+  "columnOrder": [
+    "fecha_venta",
+    "nombre_item",
+    "cantidad",
+    "monto_isk",
+    "estado_pago"
+  ],
+  "columnUpdatedAt": 1775455662659,
+  "columnWidthMap": {},
+  "customIsLoading": false,
+  "customIsLoadingValue": "",
+  "defaultPageSize": 0,
+  "defaultSelectedRowIndex": 0,
+  "defaultSelectedRowIndices": [
+    0
+  ],
+  "delimiter": ",",
+  "dynamicBindingPathList": [
+    {
+      "key": "accentColor"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "boxShadow"
+    },
+    {
+      "key": "tableData"
+    },
+    {
+      "key": "primaryColumns.fecha_venta.computedValue"
+    },
+    {
+      "key": "primaryColumns.nombre_item.computedValue"
+    },
+    {
+      "key": "primaryColumns.cantidad.computedValue"
+    },
+    {
+      "key": "primaryColumns.monto_isk.computedValue"
+    },
+    {
+      "key": "primaryColumns.estado_pago.computedValue"
+    },
+    {
+      "key": "primaryColumns.estado_pago.cellBackground"
+    },
+    {
+      "key": "primaryColumns.fecha_venta.label"
+    },
+    {
+      "key": "primaryColumns.nombre_item.label"
+    },
+    {
+      "key": "primaryColumns.cantidad.label"
+    },
+    {
+      "key": "primaryColumns.monto_isk.label"
+    },
+    {
+      "key": "primaryColumns.estado_pago.label"
+    }
+  ],
+  "dynamicPropertyPathList": [
+    {
+      "key": "tableData"
+    },
+    {
+      "key": "primaryColumns.estado_pago.cellBackground"
+    }
+  ],
+  "dynamicTriggerPathList": [],
+  "enableClientSideSearch": true,
+  "endOfData": false,
+  "flexVerticalAlignment": "start",
+  "horizontalAlignment": "LEFT",
+  "inlineEditingSaveOption": "ROW_LEVEL",
+  "isLoading": false,
+  "isSortable": true,
+  "isVisible": true,
+  "isVisibleDownload": true,
+  "isVisibleFilters": false,
+  "isVisiblePagination": true,
+  "isVisibleSearch": true,
+  "key": "aswc802h7a",
+  "label": "Data",
+  "leftColumn": 1,
+  "minWidth": 450,
+  "mobileBottomRow": 116,
+  "mobileLeftColumn": 1,
+  "mobileRightColumn": 35,
+  "mobileTopRow": 88,
+  "needsErrorInfo": false,
+  "originalBottomRow": 116,
+  "originalTopRow": 88,
+  "parentColumnSpace": 20.25,
+  "parentId": "0",
+  "parentRowSpace": 10,
+  "primaryColumns": {
+    "cantidad": {
+      "alias": "cantidad",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "cellBackground": "",
+      "columnType": "number",
+      "computedValue": "{{(() => { const tableData = tbl_historial_pagos.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"cantidad\"])) : cantidad })()}}",
+      "currencyCode": "USD",
+      "decimals": 0,
+      "enableFilter": true,
+      "enableSort": true,
+      "horizontalAlignment": "LEFT",
+      "id": "cantidad",
+      "index": 2,
+      "isCellEditable": false,
+      "isCellVisible": true,
+      "isDerived": false,
+      "isDisabled": false,
+      "isDiscardVisible": true,
+      "isEditable": false,
+      "isSaveVisible": true,
+      "isVisible": true,
+      "label": "{{ Motor_i18n.t('Panel_Vendedor', 'col_cantidad') }}",
+      "notation": "standard",
+      "originalId": "cantidad",
+      "sticky": "",
+      "textSize": "0.875rem",
+      "thousandSeparator": true,
+      "validation": {},
+      "verticalAlignment": "CENTER",
+      "width": 150
+    },
+    "estado_pago": {
+      "alias": "estado_pago",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "cellBackground": "{{(() => { const tableData = tbl_historial_pagos.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => ( currentRow.estado_pago === 'Pagado' ? '#22c55e' : '#f59e0b' )) :  currentRow.estado_pago === 'Pagado' ? '#22c55e' : '#f59e0b'  })()}}",
+      "columnType": "text",
+      "computedValue": "{{(() => { const tableData = tbl_historial_pagos.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => ( \n  currentRow[\"estado_pago\"] === 'Pagado' ? Motor_i18n.t('Panel_Vendedor', 'estado_pagado') :\n  currentRow[\"estado_pago\"] === 'Pendiente' ? Motor_i18n.t('Panel_Vendedor', 'estado_pendiente') :\n  currentRow[\"estado_pago\"] === 'Solicitado' ? Motor_i18n.t('Panel_Vendedor', 'estado_solicitado') :\n  currentRow[\"estado_pago\"] \n)) :  \n  currentRow[\"estado_pago\"] === 'Pagado' ? Motor_i18n.t('Panel_Vendedor', 'estado_pagado') :\n  currentRow[\"estado_pago\"] === 'Pendiente' ? Motor_i18n.t('Panel_Vendedor', 'estado_pendiente') :\n  currentRow[\"estado_pago\"] === 'Solicitado' ? Motor_i18n.t('Panel_Vendedor', 'estado_solicitado') :\n  currentRow[\"estado_pago\"] \n })()}}",
+      "currencyCode": "USD",
+      "decimals": 0,
+      "enableFilter": true,
+      "enableSort": true,
+      "horizontalAlignment": "LEFT",
+      "id": "estado_pago",
+      "index": 4,
+      "isCellEditable": false,
+      "isCellVisible": true,
+      "isDerived": false,
+      "isDisabled": false,
+      "isDiscardVisible": true,
+      "isEditable": false,
+      "isSaveVisible": true,
+      "isVisible": true,
+      "label": "{{ Motor_i18n.t('Panel_Vendedor', 'col_estado_pago') }}",
+      "notation": "standard",
+      "originalId": "estado_pago",
+      "sticky": "",
+      "textSize": "0.875rem",
+      "thousandSeparator": true,
+      "validation": {},
+      "verticalAlignment": "CENTER",
+      "width": 150
+    },
+    "fecha_venta": {
+      "alias": "fecha_venta",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "cellBackground": "",
+      "columnType": "text",
+      "computedValue": "{{(() => { const tableData = tbl_historial_pagos.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"fecha_venta\"])) : fecha_venta })()}}",
+      "currencyCode": "USD",
+      "decimals": 0,
+      "enableFilter": true,
+      "enableSort": true,
+      "horizontalAlignment": "LEFT",
+      "id": "fecha_venta",
+      "index": 0,
+      "isCellEditable": false,
+      "isCellVisible": true,
+      "isDerived": false,
+      "isDisabled": false,
+      "isDiscardVisible": true,
+      "isEditable": false,
+      "isSaveVisible": true,
+      "isVisible": true,
+      "label": "{{ Motor_i18n.t('Panel_Vendedor', 'col_fecha_venta') }}",
+      "notation": "standard",
+      "originalId": "fecha_venta",
+      "sticky": "",
+      "textSize": "0.875rem",
+      "thousandSeparator": true,
+      "validation": {},
+      "verticalAlignment": "CENTER",
+      "width": 150
+    },
+    "monto_isk": {
+      "alias": "monto_isk",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "cellBackground": "",
+      "columnType": "number",
+      "computedValue": "{{(() => { const tableData = tbl_historial_pagos.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => ( Number(currentRow[\"monto_isk\"]).toLocaleString('en-US') )) :  Number(currentRow[\"monto_isk\"]).toLocaleString('en-US')  })()}}",
+      "currencyCode": "USD",
+      "decimals": 0,
+      "enableFilter": true,
+      "enableSort": true,
+      "horizontalAlignment": "LEFT",
+      "id": "monto_isk",
+      "index": 3,
+      "isCellEditable": false,
+      "isCellVisible": true,
+      "isDerived": false,
+      "isDisabled": false,
+      "isDiscardVisible": true,
+      "isEditable": false,
+      "isSaveVisible": true,
+      "isVisible": true,
+      "label": "{{ Motor_i18n.t('Panel_Vendedor', 'col_monto_isk') }}",
+      "notation": "standard",
+      "originalId": "monto_isk",
+      "sticky": "",
+      "textSize": "0.875rem",
+      "thousandSeparator": true,
+      "validation": {},
+      "verticalAlignment": "CENTER",
+      "width": 150
+    },
+    "nombre_item": {
+      "alias": "nombre_item",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "cellBackground": "",
+      "columnType": "text",
+      "computedValue": "{{(() => { const tableData = tbl_historial_pagos.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"nombre_item\"])) : nombre_item })()}}",
+      "currencyCode": "USD",
+      "decimals": 0,
+      "enableFilter": true,
+      "enableSort": true,
+      "horizontalAlignment": "LEFT",
+      "id": "nombre_item",
+      "index": 1,
+      "isCellEditable": false,
+      "isCellVisible": true,
+      "isDerived": false,
+      "isDisabled": false,
+      "isDiscardVisible": true,
+      "isEditable": false,
+      "isSaveVisible": true,
+      "isVisible": true,
+      "label": "{{ Motor_i18n.t('Panel_Vendedor', 'col_nombre_item') }}",
+      "notation": "standard",
+      "originalId": "nombre_item",
+      "sticky": "",
+      "textSize": "0.875rem",
+      "thousandSeparator": true,
+      "validation": {},
+      "verticalAlignment": "CENTER",
+      "width": 150
+    }
+  },
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 42,
+  "searchKey": "",
+  "tableData": "{{ Leer_Historial_Pagos.data }}",
+  "textSize": "0.875rem",
+  "topRow": 88,
+  "totalRecordsCount": 0,
+  "type": "TABLE_WIDGET_V2",
+  "version": 2,
+  "verticalAlignment": "CENTER",
+  "widgetId": "rtobdmmenc",
+  "widgetName": "tbl_historial_pagos"
+}

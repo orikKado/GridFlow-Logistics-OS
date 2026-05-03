@@ -1,0 +1,8 @@
+SELECT 
+  personaje_id, 
+  nombre, 
+  rol, 
+  idioma_preferido, 
+  fecha_registro 
+FROM usuarios 
+ORDER BY fecha_registro DESC;

@@ -1,0 +1,3 @@
+UPDATE ordenes 
+SET estado_logistico = 'Contrato Emitido' 
+WHERE id_orden = {{Table2.triggeredRow.id_orden}};

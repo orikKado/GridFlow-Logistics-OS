@@ -1,0 +1,11 @@
+{
+  "gitSyncId": "69cb24d97fa34d5debf7475f_812d78c4-b7ef-43d5-8555-85fb03613f98",
+  "id": "Tienda_Principal_Motor_Compra",
+  "unpublishedCollection": {
+    "name": "Motor_Compra",
+    "pageId": "Tienda_Principal",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": []
+  }
+}

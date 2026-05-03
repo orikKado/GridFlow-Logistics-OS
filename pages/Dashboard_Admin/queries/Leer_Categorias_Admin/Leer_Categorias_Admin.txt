@@ -1,0 +1,4 @@
+SELECT DISTINCT categoria 
+FROM catalogo_maestro 
+WHERE categoria IS NOT NULL 
+ORDER BY categoria ASC;

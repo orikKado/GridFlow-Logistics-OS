@@ -1,0 +1,13 @@
+SELECT 
+    cm.item_id,
+    cm.nombre_item,
+    cm.categoria,
+    cm.volumen_unitario,
+    -- Calculamos el precio de venta dinámico usando la tabla de setup
+    ROUND(MIN(ir.precio_base) * (1 + (SELECT margen_ganancia_default FROM configuracion_global WHERE id = 1))) AS precio_cliente,
+    SUM(ir.cantidad) AS stock_total
+FROM inventario_real ir
+JOIN catalogo_maestro cm ON ir.item_id = cm.item_id
+WHERE ({{sel_categoria.selectedOptionValue == "" || sel_categoria.selectedOptionValue == null}} OR cm.categoria = {{sel_categoria.selectedOptionValue}})
+GROUP BY cm.item_id, cm.nombre_item, cm.categoria, cm.volumen_unitario
+HAVING SUM(ir.cantidad) > 0;

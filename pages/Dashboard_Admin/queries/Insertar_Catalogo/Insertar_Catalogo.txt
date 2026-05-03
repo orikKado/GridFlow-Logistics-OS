@@ -1,0 +1,8 @@
+INSERT INTO catalogo_maestro (item_id, nombre_item, categoria, permite_dropshipping, volumen_unitario)
+VALUES (
+    {{ inp_id.text }},
+    {{ inp_nombre.text }},
+    {{ chk_nueva_categoria.isChecked ? inp_nueva_categoria.text : sel_categoria.selectedOptionValue }},
+    {{ chk_drop.isChecked || false }},
+    {{ inp_item_volumen.text || 0 }}
+);

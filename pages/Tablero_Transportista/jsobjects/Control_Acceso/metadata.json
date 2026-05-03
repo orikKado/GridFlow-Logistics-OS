@@ -1,0 +1,11 @@
+{
+  "gitSyncId": "69cb24d97fa34d5debf7475f_e9fdbb47-34f7-4738-98f4-4c64c0a8d13c",
+  "id": "Tablero_Transportista_Control_Acceso",
+  "unpublishedCollection": {
+    "name": "Control_Acceso",
+    "pageId": "Tablero_Transportista",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": []
+  }
+}

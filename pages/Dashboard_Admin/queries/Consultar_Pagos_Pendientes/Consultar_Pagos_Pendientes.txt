@@ -1,0 +1,19 @@
+SELECT 
+    u.nombre AS vendedor,
+    u.personaje_id,
+    -- 🛡️ BLINDAJE FINANCIERO: Pagamos el costo base pactado al ingresar el lote.
+    -- Forzamos numeric(20,2) para que la contabilidad sea exacta al ISK.
+    SUM(det.cantidad * ir.precio_base)::numeric(20,2) AS monto_a_pagar,
+    
+    -- 📦 VOLUMEN FÍSICO: Total de items/naves entregadas.
+    SUM(det.cantidad) AS unidades_vendidas,
+    
+    -- 🧾 CONTROL OPERATIVO: Número de ventas individuales realizadas.
+    COUNT(det.id_detalle) AS total_transacciones
+FROM detalle_ordenes det
+JOIN inventario_real ir ON det.id_lote = ir.id_lote
+JOIN usuarios u ON ir.proveedor_id = u.personaje_id
+-- 🛡️ Filtro de seguridad por rol CORREGIDO
+WHERE '{{appsmith.store.piloto_rol}}' = 'administrador'
+  AND det.estado_pago = 'Solicitado'
+GROUP BY u.nombre, u.personaje_id;

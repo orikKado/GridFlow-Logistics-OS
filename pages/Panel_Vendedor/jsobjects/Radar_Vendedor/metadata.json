@@ -1,0 +1,11 @@
+{
+  "gitSyncId": "69cb24d97fa34d5debf7475f_51fb906f-1c5e-475b-93f9-7e2de4893a21",
+  "id": "Panel_Vendedor_Radar_Vendedor",
+  "unpublishedCollection": {
+    "name": "Radar_Vendedor",
+    "pageId": "Panel_Vendedor",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": []
+  }
+}

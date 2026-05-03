@@ -1,0 +1,16 @@
+{
+  "gitSyncId": "69cb24d97fa34d5debf7475f_c1ac4ae4-89e1-48c6-8d09-14bca0adc5a2",
+  "id": "Panel_Vendedor_Motor_i18n",
+  "unpublishedCollection": {
+    "name": "Motor_i18n",
+    "pageId": "Panel_Vendedor",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": [
+      {
+        "name": "diccionario",
+        "value": "{\n  es: {\n    Panel_Vendedor: {\n      btn_cerrar_sesion: \"Cerrar Sesión\",\n      msg_cierre_sesion: \"Sesión cerrada de forma segura.\",\n      btn_volver_tienda: \"Volver a la tienda\",\n      titulo_panel: \"Panel de Proveedor\",\n      btn_ingresar_mercancia: \"Ingresar Mercancía\",\n      lbl_saldo: \"SALDO DISPONIBLE\",\n      lbl_solicitar_retiro: \"Solicitar retiro\",\n      titulo_historial: \"Historial de Pagos y Solicitudes (30 días)\",\n      col_id_lote: \"ID Lote\",\n      col_nombre_item: \"Item\",\n      col_cantidad: \"Cantidad\",\n      col_precio_base: \"Precio Base\",\n      col_modelo_logistico: \"Modelo Logístico\",\n      col_estado_financiero: \"Estado Financiero\",\n      col_fecha_orden: \"Fecha Orden\",\n      col_precio_original: \"Precio Original\",\n      col_total_ganado: \"Total Ganado\",\n      col_estado_pago: \"Estado de Pago\",\n      col_fecha_venta: \"Fecha Venta\",\n      col_monto_isk: \"Monto ISK\",\n      estado_consignacion: \"Consignación\",\n      estado_en_consignacion: \"En Consignación\",\n      estado_pagado: \"Pagado\",\n      estado_solicitado: \"Solicitado\",\n      estado_pendiente: \"Pendiente\"\n    }\n  },\n  en: {\n    Panel_Vendedor: {\n      btn_cerrar_sesion: \"Log Out\",\n      msg_cierre_sesion: \"Session safely closed.\",\n      btn_volver_tienda: \"Back to Store\",\n      titulo_panel: \"Vendor Dashboard\",\n      btn_ingresar_mercancia: \"Register Merchandise\",\n      lbl_saldo: \"AVAILABLE BALANCE\",\n      lbl_solicitar_retiro: \"Request Withdrawal\",\n      titulo_historial: \"Payment & Request History (30 days)\",\n      col_id_lote: \"Batch ID\",\n      col_nombre_item: \"Item\",\n      col_cantidad: \"Quantity\",\n      col_precio_base: \"Base Price\",\n      col_modelo_logistico: \"Logistics Model\",\n      col_estado_financiero: \"Financial Status\",\n      col_fecha_orden: \"Order Date\",\n      col_precio_original: \"Original Price\",\n      col_total_ganado: \"Total Earned\",\n      col_estado_pago: \"Payment Status\",\n      col_fecha_venta: \"Sale Date\",\n      col_monto_isk: \"Amount ISK\",\n      estado_consignacion: \"Consignment\",\n      estado_en_consignacion: \"On Consignment\",\n      estado_pagado: \"Paid\",\n      estado_solicitado: \"Requested\",\n      estado_pendiente: \"Pending\"\n    }\n  }\n}"
+      }
+    ]
+  }
+}

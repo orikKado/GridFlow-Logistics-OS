@@ -1,0 +1,11 @@
+SELECT 
+    ir.id_lote,
+    cm.nombre_item,
+    ir.cantidad,
+    ir.precio_base,
+    ir.modelo_logistico,
+    ir.estado_financiero
+FROM inventario_real ir
+JOIN catalogo_maestro cm ON ir.item_id = cm.item_id
+WHERE ir.proveedor_id = {{appsmith.store.piloto_id}}
+ORDER BY cm.nombre_item ASC;

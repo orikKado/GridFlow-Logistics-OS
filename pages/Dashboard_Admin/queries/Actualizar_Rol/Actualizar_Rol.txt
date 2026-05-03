@@ -1,0 +1,3 @@
+UPDATE usuarios 
+SET rol = '{{tbl_personal.updatedRow.rol}}'
+WHERE personaje_id = {{tbl_personal.updatedRow.personaje_id}};

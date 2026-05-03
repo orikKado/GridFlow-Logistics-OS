@@ -1,0 +1,3 @@
+UPDATE ordenes 
+SET estado_logistico = 'En Hangar de Destino' -- Ya no es 'Entregado'
+WHERE id_orden = {{ tbl_mis_vuelos.triggeredRow.id_orden }};

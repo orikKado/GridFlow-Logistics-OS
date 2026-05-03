@@ -1,0 +1,11 @@
+{
+  "gitSyncId": "69cb24d97fa34d5debf7475f_bbf00b08-d966-4a26-b517-1dcc0b64e934",
+  "id": "Setup_Wizard_Control_Setup",
+  "unpublishedCollection": {
+    "name": "Control_Setup",
+    "pageId": "Setup_Wizard",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": []
+  }
+}

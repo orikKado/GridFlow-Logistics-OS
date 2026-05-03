@@ -1,0 +1,3 @@
+SELECT setup_completado, idioma_por_defecto 
+FROM configuracion_global 
+WHERE id = 1;

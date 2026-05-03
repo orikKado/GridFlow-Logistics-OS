@@ -1,0 +1,8 @@
+SELECT 
+    margen_ganancia_default, 
+    tarifa_courier_fija,
+    costo_por_salto,
+    costo_por_m3,
+    fee_seguro_porcentaje
+FROM configuracion_global 
+WHERE id = 1;

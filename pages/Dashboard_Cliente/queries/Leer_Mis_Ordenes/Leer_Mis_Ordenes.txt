@@ -1,0 +1,19 @@
+SELECT 
+  o.id_orden,
+  cm.nombre_item AS producto,
+  det.cantidad,
+  o.total_isk,
+  o.estacion_destino,
+  o.estado_logistico,
+  o.fecha_orden
+FROM ordenes o
+JOIN detalle_ordenes det ON o.id_orden = det.id_orden
+JOIN inventario_real ir ON det.id_lote = ir.id_lote
+JOIN catalogo_maestro cm ON ir.item_id = cm.item_id
+WHERE (
+  ('{{appsmith.store.piloto_rol}}' = 'admin') 
+  OR 
+  (o.cliente_id = {{appsmith.store.piloto_id}})
+)
+AND o.fecha_orden >= NOW() - INTERVAL '30 days'
+ORDER BY o.fecha_orden DESC;

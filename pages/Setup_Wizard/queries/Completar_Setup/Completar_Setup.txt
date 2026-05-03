@@ -1,0 +1,10 @@
+UPDATE configuracion_global
+SET 
+    setup_completado = TRUE,
+    idioma_por_defecto = {{Select_Idioma.selectedOptionValue}},
+    tarifa_courier_fija = {{Number(inp_tarifa_courier.text || 0)}},
+    margen_ganancia_default = {{Number(inp_margen.text || 0) / 100}},
+    costo_por_salto = {{Number(inp_costo_salto.text || 0)}},
+    costo_por_m3 = {{Number(inp_costo_m3.text || 0)}},
+    fee_seguro_porcentaje = {{Number(inp_fee_seguro.text || 0) / 100}} -- Convertimos 0.1 a 0.001
+WHERE id = 1;

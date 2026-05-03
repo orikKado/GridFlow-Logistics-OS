@@ -1,0 +1,5 @@
+UPDATE inventario_real 
+SET cantidad = inventario_real.cantidad + detalle_ordenes.cantidad
+FROM detalle_ordenes
+WHERE inventario_real.id_lote = detalle_ordenes.id_lote
+  AND detalle_ordenes.id_orden = {{ Table1.triggeredRow.id_orden }};

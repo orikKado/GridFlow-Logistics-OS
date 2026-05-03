@@ -1,0 +1,3 @@
+UPDATE ordenes 
+SET estado_logistico = 'Cancelado por Cliente' 
+WHERE id_orden = {{Table1.triggeredRow.id_orden}};

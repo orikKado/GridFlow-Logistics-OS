@@ -1,0 +1,8 @@
+UPDATE detalle_ordenes det
+SET estado_pago = 'Solicitado'
+FROM inventario_real ir, ordenes o
+WHERE det.id_lote = ir.id_lote 
+  AND det.id_orden = o.id_orden
+  AND ir.proveedor_id::text = {{ appsmith.store.piloto_id.toString() }}
+  AND o.estado_logistico = 'Entregado'
+  AND det.estado_pago = 'Pendiente';

@@ -1,0 +1,1 @@
+SELECT * FROM configuracion_global LIMIT 1;

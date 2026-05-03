@@ -1,0 +1,8 @@
+INSERT INTO detalle_ordenes (id_orden, id_lote, cantidad, precio_unitario, flete_cobrado)
+VALUES (
+    {{ this.params.nueva_orden_id }},
+    {{ this.params.id_lote }},
+    {{ this.params.cantidad }},
+    {{ this.params.precio_unitario }},
+    {{ this.params.flete_cobrado }}
+);

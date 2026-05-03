@@ -1,0 +1,16 @@
+{
+  "gitSyncId": "69cb24d97fa34d5debf7475f_2f317a7d-0953-44b8-9258-c31205f89097",
+  "id": "Tienda_Principal_Motor_i18n",
+  "unpublishedCollection": {
+    "name": "Motor_i18n",
+    "pageId": "Tienda_Principal",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": [
+      {
+        "name": "diccionario",
+        "value": "{\n  es: {\n    Login_y_Setup: {\n      titulo: \"Contratos Pendientes\",\n      lbl_idioma: \"Idioma\",\n      btn_login: \"Iniciar sesión con EVE Online\"\n    },\n    Tienda_Principal: {\n      filtro: \"Filtrar por Categoría\",\n      ir_bodega: \"Mi Bodega\",\n      ir_contratos: \"🚀Contratos de Transporte\",\n      ir_panel_cliente: \"Ir a panel Cliente\",\n      btn_comprar: \"Añadir a la Orden\",\n      btn_login: \"Inicia Sesión\",\n      agotado: \"AGOTADO\",\n      precio: \"Precio:\",\n      stock: \"Stock:\",\n      lbl_flete: \"Costo del transporte\",\n      modal_titulo: \"Confirmar Orden\",\n      lbl_cantidad: \"Cantidad a comprar\",\n      lbl_destino: \"Destino de Entrega\",\n      lbl_total: \"Total:\",\n      btn_comprar_modal: \"Comprar\",\n      btn_cerrar: \"Cerrar\",\n      col_vendedor: \"Vendedor\",\n      col_precio: \"Precio\",\n      lbl_piloto_activo: \"Piloto Activo\",\n      lbl_invitado: \"Invitado (Modo Vitrina)\",\n      lbl_oferta: \"Oferta\"\n    }\n  },\n  en: {\n    Login_y_Setup: {\n      titulo: \"Pending Contracts\",\n      lbl_idioma: \"Language\",\n      btn_login: \"Log in with EVE Online\"\n    },\n    Tienda_Principal: {\n      filtro: \"Filter by Category\",\n      ir_bodega: \"My Vault\",\n      ir_contratos: \"🚀Courier Contracts\",\n      ir_panel_cliente: \"Go to Client Dashboard\",\n      btn_comprar: \"Add to Order\",\n      btn_login: \"Log In\",\n      agotado: \"OUT OF STOCK\",\n      precio: \"Price:\",\n      stock: \"Stock:\",\n      lbl_flete: \"Shipping Cost\",\n      modal_titulo: \"Confirm Order\",\n      lbl_cantidad: \"Quantity to buy\",\n      lbl_destino: \"Delivery Destination\",\n      lbl_total: \"Total:\",\n      btn_comprar_modal: \"Purchase\",\n      btn_cerrar: \"Close\",\n      col_vendedor: \"Seller\",\n      col_precio: \"Price\",\n      lbl_piloto_activo: \"Active Pilot\",\n      lbl_invitado: \"Guest (Showcase Mode)\",\n      lbl_oferta: \"Offer\"\n    }\n  }\n}"
+      }
+    ]
+  }
+}

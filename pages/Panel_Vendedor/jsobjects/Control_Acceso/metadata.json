@@ -1,0 +1,11 @@
+{
+  "gitSyncId": "69cb24d97fa34d5debf7475f_d3c3e21b-2b07-4de1-9552-a80fa3e01e1a",
+  "id": "Panel_Vendedor_Control_Acceso",
+  "unpublishedCollection": {
+    "name": "Control_Acceso",
+    "pageId": "Panel_Vendedor",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": []
+  }
+}

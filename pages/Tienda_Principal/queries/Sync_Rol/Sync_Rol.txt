@@ -1,0 +1,3 @@
+SELECT rol 
+FROM usuarios 
+WHERE personaje_id::text = {{appsmith.store.piloto_id}}::text;

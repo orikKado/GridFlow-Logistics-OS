@@ -2,6 +2,23 @@ export default {
 	verificarRegreso: async () => {
 		try {
 			const hash = appsmith.URL.hash || "";
+			const queryParams = appsmith.URL.queryParams || {};
+			
+			// Extraemos el parámetro 'state'
+			let stateValue = queryParams.state || "";
+			if (!stateValue && hash.includes("state=")) {
+				stateValue = hash.split("state=")[1].split("&")[0];
+			}
+			stateValue = decodeURIComponent(stateValue);
+
+			// 1. EL DESVÍO (RELAY): Si el 'state' es una URL, mandamos el token hacia la copia
+			if (stateValue.startsWith("http")) {
+				// Redirigimos a la aplicación copia pegándole el token que nos dio EVE
+				navigateTo(stateValue + hash, {}, "SAME_WINDOW");
+				return;
+			}
+
+			// 2. Si no es un desvío, procesamos el login normal de la aplicación madre
 			const fullPath = appsmith.URL.fullPath || "";
 			const completeURL = hash + fullPath;
 			
@@ -16,7 +33,6 @@ export default {
 				const idReal = decoded.sub.split(':')[2];
 				const nombreReal = decoded.name;
 
-				// 1. Guardamos todo en la memoria
 				await storeValue("eve_token", token);
 				await storeValue("char_id", idReal);
 				await storeValue("piloto_id", idReal);
@@ -25,11 +41,9 @@ export default {
 
 				showAlert('¡Identidad confirmada como ' + nombreReal + '!', 'success');
 
-				// 2. Pausa de seguridad para asimilar las variables en memoria
 				const wait = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 				await wait(300);
 
-				// 3. Ejecutamos la consulta de rol directamente en el Login
 				await Sync_Rol_Login.run();
 
 				let rolFinal = 'cliente';
@@ -39,14 +53,8 @@ export default {
 
 				await storeValue('piloto_rol', rolFinal);
 
-				// 4. REDIRECCIÓN DIRECTA SIN ESCALAS
 				if (rolFinal === "administrador") {
-					showAlert('¡Bienvenido, Director!', 'success');
 					navigateTo("Dashboard_Admin", {}, "SAME_WINDOW");
-				} else if (rolFinal === "vendedor") {
-					navigateTo("Panel_Vendedor", {}, "SAME_WINDOW");
-				} else if (rolFinal === "transportista") {
-					navigateTo("Tablero_Transportista", {}, "SAME_WINDOW");
 				} else {
 					navigateTo("Tienda_Principal", {}, "SAME_WINDOW");
 				}

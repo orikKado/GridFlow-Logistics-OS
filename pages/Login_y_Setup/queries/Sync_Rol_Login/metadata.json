@@ -29,7 +29,7 @@
     ],
     "name": "Sync_Rol_Login",
     "pageId": "Login_y_Setup",
-    "runBehaviour": "AUTOMATIC",
+    "runBehaviour": "MANUAL",
     "userSetOnLoad": false
   }
 }

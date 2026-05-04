@@ -29,7 +29,7 @@
   "mobileRightColumn": 38,
   "mobileTopRow": 39,
   "needsErrorInfo": false,
-  "onClick": "{{navigateTo('https://login.eveonline.com/v2/oauth/authorize/?response_type=token&client_id=6b94cd4487604566ae3f6dafe9e3cb48&redirect_uri=https://gridflow-logistics.appsmith.com/app/gridflow-logistics-os/login-y-setup-69f76bfe97ac6dbd49c5a066&scope=publicData&state=gridflow', {}, 'SAME_WINDOW');}}",
+  "onClick": "{{navigateTo(Config_EVE.obtenerUrlAuth(), {}, 'SAME_WINDOW');}}",
   "parentColumnSpace": 20.25,
   "parentId": "0",
   "parentRowSpace": 10,

@@ -1,0 +1,24 @@
+{
+  "gitSyncId": "69f76bfe97ac6dbd49c5a059_5878a90a-8705-4d67-88b9-1d594f2008f0",
+  "id": "Login_y_Setup_Config_EVE",
+  "unpublishedCollection": {
+    "name": "Config_EVE",
+    "pageId": "Login_y_Setup",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": [
+      {
+        "name": "client_id",
+        "value": "\"6b94cd4487604566ae3f6dafe9e3cb48\""
+      },
+      {
+        "name": "master_redirect_uri",
+        "value": "\"https://gridflow-logistics.appsmith.com/app/gridflow-logistics-os/login-y-setup-69f76bfe97ac6dbd49c5a066\""
+      },
+      {
+        "name": "scope",
+        "value": "\"publicData\""
+      }
+    ]
+  }
+}

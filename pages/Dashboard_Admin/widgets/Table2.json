@@ -168,6 +168,9 @@
     },
     {
       "key": "primaryColumns.destino_nombre.label"
+    },
+    {
+      "key": "primaryColumns.customColumn3.isDisabled"
     }
   ],
   "dynamicPropertyPathList": [
@@ -188,6 +191,9 @@
     },
     {
       "key": "primaryColumns.customColumn3.onClick"
+    },
+    {
+      "key": "primaryColumns.customColumn3.isDisabled"
     }
   ],
   "dynamicTriggerPathList": [
@@ -325,7 +331,7 @@
       "isCellEditable": false,
       "isCellVisible": true,
       "isDerived": true,
-      "isDisabled": false,
+      "isDisabled": "{{(() => { const tableData = Table2.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => ( currentRow?.estado_logistico === 'Entregado' || currentRow?.estado_logistico === 'Cancelado por Cliente' )) :  currentRow?.estado_logistico === 'Entregado' || currentRow?.estado_logistico === 'Cancelado por Cliente'  })()}}",
       "isDiscardVisible": true,
       "isEditable": false,
       "isSaveVisible": true,

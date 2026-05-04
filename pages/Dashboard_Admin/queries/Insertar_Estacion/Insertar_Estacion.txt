@@ -1,5 +1,5 @@
 INSERT INTO estaciones_entrega (nombre_estacion, saltos_desde_origen)
 VALUES (
-  {{inp_nueva_estacion.text}}, 
-  {{inp_saltos.text}}
+    {{inp_nueva_estacion.text}}, 
+    {{parseInt(inp_saltos.text) || 0}}
 );

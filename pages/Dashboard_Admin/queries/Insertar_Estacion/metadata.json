@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "INSERT INTO estaciones_entrega (nombre_estacion, saltos_desde_origen)\nVALUES (\n  {{inp_nueva_estacion.text}}, \n  {{inp_saltos.text}}\n);",
+      "body": "INSERT INTO estaciones_entrega (nombre_estacion, saltos_desde_origen)\nVALUES (\n    {{inp_nueva_estacion.text}}, \n    {{parseInt(inp_saltos.text) || 0}}\n);",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [

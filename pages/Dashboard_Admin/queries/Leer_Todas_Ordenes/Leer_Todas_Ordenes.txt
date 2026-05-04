@@ -12,8 +12,8 @@ SELECT
     ed.nombre_estacion AS destino_nombre,
     o.fecha_orden
 FROM ordenes o
-LEFT JOIN usuarios u ON o.cliente_id = u.personaje_id
-LEFT JOIN usuarios t ON o.transportista_id = t.personaje_id
+LEFT JOIN usuarios u ON o.cliente_id::text = u.personaje_id::text
+LEFT JOIN usuarios t ON o.transportista_id::text = t.personaje_id::text
 LEFT JOIN detalle_ordenes det ON o.id_orden = det.id_orden
 LEFT JOIN inventario_real ir ON det.id_lote = ir.id_lote
 LEFT JOIN catalogo_maestro cm ON ir.item_id = cm.item_id

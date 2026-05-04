@@ -11,16 +11,18 @@ export default {
 			}
 			stateValue = decodeURIComponent(stateValue);
 
-			// 1. EL DESVÍO (RELAY): Si el 'state' es una URL, mandamos el token hacia la copia
-			if (stateValue.startsWith("http")) {
-				// Redirigimos a la aplicación copia pegándole el token que nos dio EVE
+			const currentUrl = appsmith.URL.fullPath || "";
+			// URL exacta de la aplicación madre
+			const masterRedirectUri = "https://gridflow-logistics.appsmith.com/app/gridflow-logistics-os/login-y-setup-69f76bfe97ac6dbd49c5a066";
+
+			// 1. EL DESVÍO (RELAY): Solo la aplicación MADRE hace desvío hacia la copia.
+			if (currentUrl.includes(masterRedirectUri) && stateValue.startsWith("http")) {
 				navigateTo(stateValue + hash, {}, "SAME_WINDOW");
 				return;
 			}
 
-			// 2. Si no es un desvío, procesamos el login normal de la aplicación madre
-			const fullPath = appsmith.URL.fullPath || "";
-			const completeURL = hash + fullPath;
+			// 2. Si no es un desvío (o ya estamos en la copia), procesamos el login normal
+			const completeURL = hash + currentUrl;
 			
 			if (completeURL.includes("access_token=")) {
 				const token = completeURL.split("access_token=")[1].split("&")[0];
@@ -33,6 +35,7 @@ export default {
 				const idReal = decoded.sub.split(':')[2];
 				const nombreReal = decoded.name;
 
+				// Guardamos en la memoria local de la aplicación actual
 				await storeValue("eve_token", token);
 				await storeValue("char_id", idReal);
 				await storeValue("piloto_id", idReal);
@@ -44,15 +47,21 @@ export default {
 				const wait = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 				await wait(300);
 
-				await Sync_Rol_Login.run();
+				// === NUEVO FLUJO SECUENCIAL ===
+				// 1. Registramos o actualizamos el usuario en la base de datos conectada
+				await Registrar_Usuario.run(); 
+
+				// 2. Consultamos el rol específico de este usuario conectado
+				await Verificar_Rol.run();
 
 				let rolFinal = 'cliente';
-				if (Sync_Rol_Login.data && Sync_Rol_Login.data.length > 0) {
-					rolFinal = Sync_Rol_Login.data[0].rol;
+				if (Verificar_Rol.data && Verificar_Rol.data.length > 0) {
+					rolFinal = Verificar_Rol.data[0].rol;
 				}
 
 				await storeValue('piloto_rol', rolFinal);
 
+				// Redirección final basada en el rol real de la base de datos
 				if (rolFinal === "administrador") {
 					navigateTo("Dashboard_Admin", {}, "SAME_WINDOW");
 				} else {

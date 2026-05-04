@@ -1,8 +1,11 @@
 export default {
-  verificarPermiso: () => {
-    // Si la mochila está vacía o no hay token, patada a la pantalla de Login
-    if (!appsmith.store.eve_token) {
-      navigateTo('Login_y_Setup', {}, 'SAME_WINDOW');
-    }
-  }
+	validarAcceso: () => {
+		const rolValido = appsmith.store.piloto_rol;
+		
+		// Si no es administrador, lo mandamos de vuelta a la tienda
+		if (rolValido !== 'administrador') {
+			showAlert('Acceso denegado. No tienes los permisos requeridos.', 'error');
+			navigateTo('Tienda_Principal', {}, 'SAME_WINDOW');
+		}
+	}
 }

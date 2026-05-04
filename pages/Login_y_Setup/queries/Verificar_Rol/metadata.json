@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "SELECT personaje_id, nombre, rol \nFROM usuarios \nWHERE personaje_id = {{Identificar_Personaje.data.CharacterID}};",
+      "body": "SELECT personaje_id, nombre, rol \nFROM usuarios \nWHERE personaje_id = {{appsmith.store.piloto_id}};",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [

@@ -1,9 +1,9 @@
 INSERT INTO usuarios (personaje_id, nombre, rol, idioma_preferido)
 VALUES (
-    {{Identificar_Personaje.data.CharacterID}}, 
-    {{Identificar_Personaje.data.CharacterName}}, 
+    {{appsmith.store.piloto_id}}, 
+    {{appsmith.store.piloto_nombre}}, 
     'cliente', 
-    'EN'
+    'ES'
 )
 ON CONFLICT (personaje_id) 
 DO UPDATE SET 

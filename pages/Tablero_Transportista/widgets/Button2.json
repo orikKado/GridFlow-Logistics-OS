@@ -36,7 +36,7 @@
   "mobileRightColumn": 16,
   "mobileTopRow": 11,
   "needsErrorInfo": false,
-  "onClick": "{{\n  clearStore()\n  .then(() => {\n    showAlert(Motor_i18n.t('Tablero_Transportista', 'msg_cierre_sesion'), 'success');\n    navigateTo('Login_y_Setup');\n  })\n}}",
+  "onClick": "{{\n  clearStore()\n  .then(() => {\n    showAlert('Sesión cerrada de forma segura.', 'success');\n    navigateTo('Login_y_Setup', {}, 'SAME_WINDOW');\n  })\n}}",
   "parentColumnSpace": 19.8125,
   "parentId": "0",
   "parentRowSpace": 10,

@@ -1,6 +1,6 @@
 {
-  "gitSyncId": "69cb24d97fa34d5debf7475f_03664ce1-1f8d-4248-a321-316af7141447",
-  "id": "Dashboard_Admin_Control_Acceso.verificarPermiso",
+  "gitSyncId": "69f76bfe97ac6dbd49c5a059_306ce307-3586-431f-a63f-d616009777a9",
+  "id": "Dashboard_Admin_Control_Acceso.validarAcceso",
   "pluginId": "js-plugin",
   "pluginType": "JS",
   "unpublishedAction": {
@@ -22,10 +22,10 @@
         "key": "body"
       }
     ],
-    "fullyQualifiedName": "Control_Acceso.verificarPermiso",
-    "name": "verificarPermiso",
+    "fullyQualifiedName": "Control_Acceso.validarAcceso",
+    "name": "validarAcceso",
     "pageId": "Dashboard_Admin",
     "runBehaviour": "MANUAL",
-    "userSetOnLoad": true
+    "userSetOnLoad": false
   }
 }

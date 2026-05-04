@@ -33,7 +33,7 @@
   "mobileRightColumn": 18,
   "mobileTopRow": 8,
   "needsErrorInfo": false,
-  "onClick": "{{\n  clearStore()\n  .then(() => {\n    showAlert('Sesión cerrada de forma segura.', 'success');\n    navigateTo('Login_y_Setup');\n  })\n}}",
+  "onClick": "{{\n  clearStore()\n  .then(() => {\n    showAlert('Sesión cerrada de forma segura.', 'success');\n    navigateTo('Login_y_Setup', {}, 'SAME_WINDOW');\n  })\n}}",
   "parentColumnSpace": 19.8125,
   "parentId": "0",
   "parentRowSpace": 10,
